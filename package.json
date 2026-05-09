@@ -1,0 +1,23 @@
+{
+  "name": "gestion-ya",
+  "version": "1.0.0",
+  "description": "Gestion Ya - Soluciones de Software para tu Negocio",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/germangd/GestionYa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/germangd/GestionYa/issues"
+  },
+  "homepage": "https://github.com/germangd/GestionYa#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}

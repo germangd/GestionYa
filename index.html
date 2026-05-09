@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestion Ya | Soluciones de Software para tu Negocio</title>
+  <meta name="description" content="Impulsa tu negocio con software de ventas, paginas web profesionales y agenda de turnos online. Gestion Ya desarrolla soluciones a medida para comercios y servicios.">
+  <!--
+    Métricas privadas (solo vos): Google Analytics 4
+    1) Creá una propiedad en https://analytics.google.com
+    2) Copiá el "Measurement ID" (formato G-XXXXXXXXXX)
+    3) Pegalo abajo en window.GESTIONYA_GA_ID
+    Los visitantes no ven ningún panel; los informes están solo en tu cuenta de Analytics.
+  -->
+  <style>
+    :root {
+      --bg: #0a0f1f;
+      --surface: #101935;
+      --card: #141f42;
+      --text: #f5f7ff;
+      --muted: #b7c3e8;
+      --primary: #3f7bff;
+      --accent: #00d4b7;
+      --ring: rgba(63, 123, 255, 0.35);
+      --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: radial-gradient(circle at top right, #17254f 0%, var(--bg) 48%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(8px);
+      background: rgba(10, 15, 31, 0.82);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 50;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(140deg, var(--primary), var(--accent));
+      color: white;
+      font-weight: 800;
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      font-weight: 600;
+      padding: 12px 18px;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary {
+      background: linear-gradient(130deg, var(--primary), #2e5fd4);
+      color: #fff;
+    }
+
+    .btn-outline {
+      border-color: rgba(255, 255, 255, 0.2);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .hero {
+      padding: 88px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4.8vw, 3.4rem);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 60ch;
+      margin-bottom: 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: #d8e1ff;
+      font-size: 0.9rem;
+    }
+
+    .hero-badges span {
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      padding: 6px 11px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .mockup {
+      background: linear-gradient(160deg, #1d2f60, #101935);
+      border-radius: 18px;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow: var(--shadow);
+    }
+
+    .mockup h3 {
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+    }
+
+    .mockup ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .mockup li {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 56px 0;
+    }
+
+    .section-title {
+      margin-bottom: 20px;
+      font-size: clamp(1.35rem, 2.3vw, 2rem);
+    }
+
+    .section-desc {
+      color: var(--muted);
+      max-width: 72ch;
+      margin-bottom: 28px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .card ul {
+      list-style: none;
+      display: grid;
+      gap: 7px;
+      color: #d8e1ff;
+      font-size: 0.92rem;
+    }
+
+    .card li::before {
+      content: "• ";
+      color: var(--accent);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .step {
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .step strong {
+      display: inline-block;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .cta {
+      padding: 56px 0 70px;
+    }
+
+    .cta-box {
+      border-radius: 18px;
+      background: linear-gradient(150deg, #253f7c, #0f1a3a);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .contact {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 930px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      .nav { display: none; }
+      .cards, .steps { grid-template-columns: 1fr; }
+      .header-inner { padding: 12px 0; }
+      .hero { padding-top: 52px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio">
+        <span class="brand-mark">GY</span>
+        <span>Gestion Ya Software</span>
+      </a>
+      <nav class="nav">
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Como trabajamos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="btn btn-outline" href="#contacto">Cotizar</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <h1>Software que impulsa ventas y ordena tu negocio.</h1>
+          <p>
+            En Gestion Ya creamos soluciones digitales para comercios y profesionales:
+            sistemas de ventas, paginas web y agenda de turnos online, con foco en resultados reales.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5491139292488?text=Hola%2C%20quiero%20informacion%20sobre%20sus%20servicios%20de%20software." target="_blank" rel="noopener noreferrer">Quiero una demo</a>
+            <a class="btn btn-outline" href="#servicios">Ver soluciones</a>
+          </div>
+          <div class="hero-badges">
+            <span>Implementacion rapida</span>
+            <span>Capacitacion incluida</span>
+            <span>Soporte cercano</span>
+          </div>
+        </div>
+        <aside class="mockup" aria-label="Vista de soluciones">
+          <h3>Soluciones disponibles</h3>
+          <ul>
+            <li><span>Sistema de Ventas</span><strong>Gestion de stock y caja</strong></li>
+            <li><span>Pagina Web Comercial</span><strong>Diseño responsive</strong></li>
+            <li><span>Agenda de Turnos</span><strong>Reservas online 24/7</strong></li>
+            <li><span>Reportes y Analitica</span><strong>Datos para decidir mejor</strong></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <h2 class="section-title">Servicios principales</h2>
+        <p class="section-desc">
+          Diseñamos herramientas simples de usar y pensadas para el dia a dia de tu negocio.
+          Cada implementacion puede personalizarse segun rubro, volumen y objetivos.
+        </p>
+        <div class="cards">
+          <article class="card">
+            <h3>Software de Ventas</h3>
+            <p>Controla operaciones de mostrador y administracion desde un solo lugar.</p>
+            <ul>
+              <li>Ventas rapidas y carga intuitiva</li>
+              <li>Control de stock en tiempo real</li>
+              <li>Reportes diarios, semanales y mensuales</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Paginas Web</h3>
+            <p>Tu negocio visible en internet con una presencia profesional y confiable.</p>
+            <ul>
+              <li>Landing pages y sitios corporativos</li>
+              <li>Optimizacion para celular y buscadores</li>
+              <li>Integracion con WhatsApp y formularios</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Agenda de Turnos</h3>
+            <p>Permite a tus clientes reservar sin llamadas y reduce ausencias.</p>
+            <ul>
+              <li>Calendario con disponibilidad</li>
+              <li>Recordatorios automaticos</li>
+              <li>Gestion de profesionales y horarios</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="proceso">
+      <div class="container">
+        <h2 class="section-title">Como trabajamos</h2>
+        <p class="section-desc">Proceso claro para que sepas exactamente que esperar en cada etapa.</p>
+        <div class="steps">
+          <article class="step">
+            <strong>01. Diagnostico</strong>
+            <p>Relevamos tu flujo actual y detectamos oportunidades de mejora.</p>
+          </article>
+          <article class="step">
+            <strong>02. Propuesta</strong>
+            <p>Definimos alcance, tiempos y herramientas acordes a tu negocio.</p>
+          </article>
+          <article class="step">
+            <strong>03. Implementacion</strong>
+            <p>Configuramos, personalizamos y dejamos todo funcionando.</p>
+          </article>
+          <article class="step">
+            <strong>04. Acompanamiento</strong>
+            <p>Capacitacion y soporte para que aproveches al maximo la solucion.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contacto">
+      <div class="container cta-box">
+        <div>
+          <h2 class="section-title">Llevemos tu negocio al siguiente nivel</h2>
+          <p class="section-desc" style="margin: 0;">
+            Contame que necesitas y te preparo una propuesta a medida en menos de 24 horas.
+          </p>
+          <div class="contact">
+            <a class="btn btn-primary" href="https://wa.me/5491139292488?text=Hola%2C%20quiero%20informacion%20sobre%20sus%20servicios%20de%20software." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a class="btn btn-outline" href="mailto:germangd23@gmail.com">germangd23@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>Gestion Ya Software</strong> | Soluciones digitales para ventas y servicios.</p>
+      <p>Contacto: germangd23@gmail.com · WhatsApp +54 9 11 3929-2488</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      window.GESTIONYA_GA_ID = 'G-XXXXXXXXXX';
+
+      var gaId = window.GESTIONYA_GA_ID;
+      if (!gaId || /XXXX/.test(gaId)) return;
+
+      var gtagScript = document.createElement('script');
+      gtagScript.async = true;
+      gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(gaId);
+      document.head.appendChild(gtagScript);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', gaId);
+
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('a[href*="wa.me"]').forEach(function (el) {
+          el.addEventListener('click', function () {
+            gtag('event', 'whatsapp_click');
+          });
+        });
+        document.querySelectorAll('a[href^="mailto:"]').forEach(function (el) {
+          el.addEventListener('click', function () {
+            gtag('event', 'email_click');
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -2,38 +2,9 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GestiónYa — Soluciones de Software para tu Negocio</title>
 <meta name="description" content="Software de ventas, páginas web profesionales y agenda de turnos online. DEMO gratis por 7 días. Sin tarjeta de crédito.">
-<!--
-  URL pública de esta landing (canonical + vista previa en redes):
-  Por defecto: https://gestionya.netlify.app/
-  Si tu dominio es otro, buscá en este archivo "gestionya.netlify.app" y reemplazalo por el tuyo (ej. https://gestionya.com.ar o https://tusuario.github.io/Pagina/).
-  Subí og-image.jpg (1200×630 px) a la misma raíz desde donde se sirve la página, o cambiá la ruta en og:image / twitter:image.
--->
-<link rel="canonical" href="https://gestionya.netlify.app/">
-<meta property="og:site_name" content="GestiónYa">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="es_AR">
-<meta property="og:title" content="GestiónYa — Soluciones de Software para tu Negocio">
-<meta property="og:description" content="Software de ventas, páginas web profesionales y agenda de turnos online. DEMO gratis por 7 días. Sin tarjeta de crédito.">
-<meta property="og:url" content="https://gestionya.netlify.app/">
-<meta property="og:image" content="https://gestionya.netlify.app/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="GestiónYa — software de ventas, web y turnos para tu negocio">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="GestiónYa — Soluciones de Software para tu Negocio">
-<meta name="twitter:description" content="Software de ventas, páginas web profesionales y agenda de turnos online. DEMO gratis por 7 días. Sin tarjeta de crédito.">
-<meta name="twitter:image" content="https://gestionya.netlify.app/og-image.jpg">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XW3DRNR9WV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XW3DRNR9WV');
-</script>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -94,46 +65,6 @@ nav {
   transition: transform 0.15s, box-shadow 0.15s;
 }
 .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(184,245,66,0.35); }
-.nav-cta-short { display: none; }
-.nav-end {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.nav-menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  width: 42px;
-  height: 42px;
-  padding: 0;
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: var(--radio);
-  background: rgba(255,255,255,0.04);
-  color: var(--blanco);
-  cursor: pointer;
-  transition: border-color 0.15s, background 0.15s;
-}
-.nav-menu-toggle:hover {
-  border-color: rgba(255,255,255,0.22);
-  background: rgba(255,255,255,0.07);
-}
-.nav-menu-toggle:focus-visible {
-  outline: 2px solid var(--verde);
-  outline-offset: 2px;
-}
-.nav-menu-toggle span {
-  display: block;
-  width: 18px;
-  height: 2px;
-  background: currentColor;
-  border-radius: 1px;
-}
-.nav-menu-backdrop {
-  display: none;
-}
 
 /* ── HERO ── */
 .hero {
@@ -282,6 +213,14 @@ section.full-width { max-width: none; padding: 100px 40px; }
   border: 1px solid rgba(184,245,66,0.3);
   border-radius: 4px;
   padding: 4px 10px;
+  cursor: pointer;
+  background: none;
+  text-decoration: none;
+  transition: background .15s, border-color .15s;
+}
+.servicio-tag:hover {
+  background: rgba(184,245,66,0.1);
+  border-color: rgba(184,245,66,0.6);
 }
 
 /* ── DEMO ── */
@@ -677,80 +616,8 @@ footer p { margin-top: 6px; }
 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
-  :root {
-    /* Altura visual de la barra fija: panel menú y backdrop usan el mismo valor */
-    --nav-bar-h: calc(68px + env(safe-area-inset-top, 0px));
-  }
-  nav {
-    padding: 12px 16px;
-    padding-top: calc(12px + env(safe-area-inset-top, 0px));
-    min-height: var(--nav-bar-h);
-    box-sizing: border-box;
-  }
-  .nav-logo { font-size: 18px; }
-  .nav-cta {
-    font-size: 12px;
-    padding: 9px 14px;
-    white-space: nowrap;
-  }
-  .nav-cta-long { display: none; }
-  .nav-cta-short { display: inline; }
-  .nav-end { gap: 8px; }
-  .nav-menu-toggle {
-    display: flex;
-    width: 40px;
-    height: 40px;
-  }
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    position: fixed;
-    top: var(--nav-bar-h);
-    left: 0;
-    right: 0;
-    padding: 8px 20px 24px;
-    max-height: min(420px, calc(100vh - var(--nav-bar-h)));
-    overflow-y: auto;
-    background: rgba(10,10,10,0.97);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 24px 40px rgba(0,0,0,0.45);
-    z-index: 99;
-    transform: translateY(-8px);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
-  }
-  .nav-links.is-open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-  .nav-links a {
-    padding: 14px 4px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    color: var(--blanco);
-    font-size: 15px;
-  }
-  .nav-links a:last-of-type { border-bottom: none; }
-  .nav-menu-backdrop.is-open {
-    display: block;
-    position: fixed;
-    top: var(--nav-bar-h);
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 98;
-    background: rgba(0,0,0,0.5);
-  }
-  section,
-  footer {
-    scroll-margin-top: calc(var(--nav-bar-h) + 12px);
-  }
+  nav { padding: 16px 20px; }
+  .nav-links { display: none; }
   .hero { padding: 100px 20px 60px; }
   section { padding: 60px 20px; }
   .demo-section { padding: 60px 20px; }
@@ -775,18 +642,149 @@ footer p { margin-top: 6px; }
 @media (max-width: 480px) {
   .proceso-grid { grid-template-columns: 1fr; }
 }
+
+/* ── MODAL ONBOARDING DEMO ── */
+.dm-overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,.85);
+  backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  opacity: 0; pointer-events: none;
+  transition: opacity .25s;
+}
+.dm-overlay.active { opacity: 1; pointer-events: all; }
+
+.dm-modal {
+  background: #111; border: 1px solid rgba(255,255,255,.1);
+  border-radius: 16px; width: 100%; max-width: 480px;
+  overflow: hidden;
+  transform: translateY(20px) scale(.97);
+  transition: transform .25s;
+  position: relative;
+}
+.dm-overlay.active .dm-modal { transform: translateY(0) scale(1); }
+
+.dm-modal-header {
+  background: #0e0e0e; padding: 14px 20px;
+  display: flex; align-items: center; gap: 8px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.dm-dot { width: 10px; height: 10px; border-radius: 50%; }
+.dm-url { flex: 1; text-align: center; font-size: 11px; color: var(--gris-texto); }
+.dm-close {
+  position: absolute; top: 12px; right: 16px;
+  background: none; border: none; color: var(--gris-texto);
+  font-size: 20px; cursor: pointer; line-height: 1;
+  transition: color .15s;
+}
+.dm-close:hover { color: var(--blanco); }
+
+.dm-body { padding: 32px; }
+
+/* paso 1: formulario */
+.dm-step { display: none; }
+.dm-step.active { display: block; }
+
+.dm-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(184,245,66,.1); border: 1px solid rgba(184,245,66,.25);
+  border-radius: 20px; padding: 5px 12px;
+  font-size: 11px; font-weight: 600; color: var(--verde);
+  margin-bottom: 18px; letter-spacing: .5px;
+}
+.dm-title {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 22px; margin-bottom: 8px; letter-spacing: -.3px;
+}
+.dm-desc { font-size: 14px; color: var(--gris-texto); line-height: 1.6; margin-bottom: 24px; }
+
+.dm-form { display: flex; flex-direction: column; gap: 14px; }
+.dm-field { display: flex; flex-direction: column; gap: 6px; }
+.dm-field label {
+  font-size: 11px; font-weight: 600; letter-spacing: .5px;
+  text-transform: uppercase; color: var(--gris-texto);
+}
+.dm-field input, .dm-field select {
+  background: #1a1a1a; border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--radio); padding: 13px 14px;
+  color: var(--blanco); font-size: 14px;
+  font-family: 'DM Sans', sans-serif; width: 100%;
+  transition: border-color .15s;
+  outline: none;
+}
+.dm-field input:focus, .dm-field select:focus { border-color: var(--verde); }
+.dm-field select option { background: #1a1a1a; }
+.dm-field input.error { border-color: #ff5b5b; }
+
+.dm-submit {
+  background: var(--verde); color: var(--negro);
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 15px; padding: 15px;
+  border: none; border-radius: var(--radio); cursor: pointer;
+  width: 100%; margin-top: 4px;
+  transition: transform .15s, box-shadow .15s;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.dm-submit:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(184,245,66,.3); }
+.dm-fine { font-size: 11px; color: var(--gris-texto); text-align: center; margin-top: 8px; line-height: 1.5; }
+
+/* paso 2: éxito */
+.dm-success-ico { font-size: 48px; text-align: center; margin-bottom: 16px; }
+.dm-success-title {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 22px; text-align: center; margin-bottom: 8px;
+}
+.dm-success-sub { font-size: 14px; color: var(--gris-texto); text-align: center; line-height: 1.6; margin-bottom: 28px; }
+
+.dm-download-btn {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: var(--verde); color: var(--negro);
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 16px; padding: 16px;
+  border-radius: var(--radio); text-decoration: none;
+  width: 100%; text-align: center;
+  transition: transform .15s, box-shadow .15s;
+  box-shadow: 0 8px 28px rgba(184,245,66,.3);
+  margin-bottom: 12px;
+}
+.dm-download-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(184,245,66,.4); }
+
+.dm-wa-notif {
+  background: #075e54; border-radius: 8px; padding: 14px 16px;
+  display: flex; gap: 10px; align-items: flex-start; margin-bottom: 16px;
+}
+.dm-wa-ico { font-size: 20px; flex-shrink: 0; }
+.dm-wa-notif p { font-size: 13px; color: #c8f0da; line-height: 1.5; }
+.dm-wa-notif strong { color: #25d366; }
+
+.dm-steps-hint { display: flex; flex-direction: column; gap: 8px; }
+.dm-hint-item {
+  display: flex; gap: 10px; align-items: flex-start;
+  font-size: 13px; color: var(--gris-texto); line-height: 1.5;
+}
+.dm-hint-num {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 11px; color: var(--verde); flex-shrink: 0;
+  background: rgba(184,245,66,.1); border-radius: 4px;
+  padding: 2px 6px; margin-top: 1px;
+}
+
+@media (max-width: 500px) {
+  .dm-body { padding: 22px; }
+  .dm-title { font-size: 19px; }
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<div class="nav-menu-backdrop" id="nav-menu-backdrop" hidden aria-hidden="true"></div>
 <nav>
   <div class="nav-logo">
     <span class="nav-logo-dot"></span>
     GestiónYa
   </div>
-  <div class="nav-links" id="nav-menu" role="navigation" aria-label="Secciones principales">
+  <div class="nav-links">
     <a href="#servicios">Servicios</a>
     <a href="#rubros">Por rubro</a>
     <a href="#demo">DEMO gratis</a>
@@ -795,12 +793,7 @@ footer p { margin-top: 6px; }
     <a href="#precios">Precios</a>
     <a href="#contacto">Contacto</a>
   </div>
-  <div class="nav-end">
-    <button type="button" class="nav-menu-toggle" id="nav-menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú de navegación">
-      <span></span><span></span><span></span>
-    </button>
-    <a href="#demo" class="nav-cta"><span class="nav-cta-long">⬇️ Descargar DEMO</span><span class="nav-cta-short">⬇️ DEMO</span></a>
-  </div>
+  <a href="#demo" class="nav-cta">⬇️ Descargar DEMO</a>
 </nav>
 
 <!-- HERO -->
@@ -860,7 +853,7 @@ footer p { margin-top: 6px; }
           <li>Reportes diarios, semanales y mensuales</li>
           <li>Gestión por empleado y turno</li>
         </ul>
-        <span class="servicio-tag">DEMO GRATIS ↓</span>
+        <button class="servicio-tag" onclick="dmOpen()">DEMO GRATIS ↓</button>
       </div>
       <div class="servicio-card">
         <span class="servicio-icon">🌐</span>
@@ -872,7 +865,7 @@ footer p { margin-top: 6px; }
           <li>Integración con WhatsApp y formularios</li>
           <li>Diseño adaptado a tu rubro</li>
         </ul>
-        <span class="servicio-tag">CONSULTÁ →</span>
+        <a class="servicio-tag" href="https://wa.me/5491139292488?text=Hola!%20Quiero%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" target="_blank" rel="noopener">CONSULTÁ →</a>
       </div>
       <div class="servicio-card">
         <span class="servicio-icon">📅</span>
@@ -884,7 +877,7 @@ footer p { margin-top: 6px; }
           <li>Gestión de profesionales y horarios</li>
           <li>Panel de administración simple</li>
         </ul>
-        <span class="servicio-tag">CONSULTÁ →</span>
+        <a class="servicio-tag" href="https://wa.me/5491139292488?text=Hola!%20Quiero%20info%20sobre%20la%20agenda%20de%20turnos%20online" target="_blank" rel="noopener">CONSULTÁ →</a>
       </div>
     </div>
   </div>
@@ -1551,48 +1544,163 @@ footer p { margin-top: 6px; }
   <p style="margin-top: 8px;">germangd23@gmail.com · +54 9 11 3929-2488</p>
 </footer>
 
+<!-- MODAL ONBOARDING DEMO -->
+<div class="dm-overlay" id="dm-overlay" onclick="dmClickOutside(event)">
+  <div class="dm-modal" role="dialog" aria-modal="true" aria-labelledby="dm-title-text">
+
+    <div class="dm-modal-header">
+      <div class="dm-dot" style="background:#ff5f57"></div>
+      <div class="dm-dot" style="background:#ffbd2e"></div>
+      <div class="dm-dot" style="background:#28c840"></div>
+      <div class="dm-url">gestionya — descarga segura</div>
+    </div>
+    <button class="dm-close" onclick="dmClose()" aria-label="Cerrar">✕</button>
+
+    <div class="dm-body">
+
+      <!-- PASO 1: FORMULARIO -->
+      <div class="dm-step active" id="dm-step1">
+        <div class="dm-badge">⬇️ DEMO GRATIS · 7 días · Sin tarjeta</div>
+        <h2 class="dm-title" id="dm-title-text">Dejame tus datos y te mando el link ahora</h2>
+        <p class="dm-desc">Así puedo acompañarte durante la prueba y ayudarte si surge alguna duda con la instalación.</p>
+
+        <form class="dm-form" onsubmit="dmSubmit(event)" novalidate>
+          <div class="dm-field">
+            <label for="dm-nombre">Tu nombre *</label>
+            <input type="text" id="dm-nombre" placeholder="Ej: Marcela" autocomplete="given-name" required>
+          </div>
+          <div class="dm-field">
+            <label for="dm-wapp">WhatsApp *</label>
+            <input type="tel" id="dm-wapp" placeholder="Ej: 11 1234-5678" autocomplete="tel" required>
+          </div>
+          <div class="dm-field">
+            <label for="dm-rubro">Tipo de negocio (opcional)</label>
+            <select id="dm-rubro">
+              <option value="">Seleccioná tu rubro...</option>
+              <option value="Kiosco o almacén">🏪 Kiosco o almacén</option>
+              <option value="Peluquería o estética">💇 Peluquería o estética</option>
+              <option value="Local de ropa">👕 Local de ropa</option>
+              <option value="Farmacia o dietética">💊 Farmacia o dietética</option>
+              <option value="Ferretería">🔧 Ferretería</option>
+              <option value="Restaurante o bar">🍔 Restaurante o bar</option>
+              <option value="Otro">🏢 Otro</option>
+            </select>
+          </div>
+          <button type="submit" class="dm-submit">
+            <span>Mandarme el link de descarga</span> →
+          </button>
+          <p class="dm-fine">Tu número solo se usa para enviarte el link y soporte. Sin spam, sin publicidad.</p>
+        </form>
+      </div>
+
+      <!-- PASO 2: ÉXITO + LINK -->
+      <div class="dm-step" id="dm-step2">
+        <div class="dm-success-ico">🎉</div>
+        <h2 class="dm-success-title">¡Listo, <span id="dm-nombre-ok"></span>!</h2>
+        <p class="dm-success-sub">Tu DEMO está activa por <strong style="color:var(--verde)">7 días completos</strong>. Descargá ahora e instalá en menos de 3 minutos.</p>
+
+        <a href="https://drive.google.com/drive/folders/10hn2uAfc--V8GHQagWIHLVufnDN9eEYe?usp=sharing"
+           target="_blank" rel="noopener"
+           class="dm-download-btn"
+           onclick="dmTrackDownload()">
+          ⬇️ Descargar DEMO + Guía de instalación
+        </a>
+
+        <div class="dm-wa-notif">
+          <span class="dm-wa-ico">💬</span>
+          <p>Te voy a escribir por WhatsApp en los próximos minutos con el <strong>primer mensaje de bienvenida</strong> y la guía paso a paso.</p>
+        </div>
+
+        <div class="dm-steps-hint">
+          <div class="dm-hint-item"><span class="dm-hint-num">HOY</span><span>Descargá e instalá. Incluye guía paso a paso en la carpeta.</span></div>
+          <div class="dm-hint-item"><span class="dm-hint-num">D·1</span><span>Te escribo para ver si pudiste instalar y resolver cualquier duda.</span></div>
+          <div class="dm-hint-item"><span class="dm-hint-num">D·7</span><span>Si te gustó, elegimos juntos el plan que mejor se adapte a tu negocio.</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <script>
-// Menú móvil
-(function () {
-  var toggle = document.getElementById('nav-menu-toggle');
-  var menu = document.getElementById('nav-menu');
-  var backdrop = document.getElementById('nav-menu-backdrop');
-  if (!toggle || !menu) return;
+// ── MODAL ONBOARDING DEMO ──
+const GERMAN_WA = '5491139292488';
+const DRIVE_LINK = 'https://drive.google.com/drive/folders/10hn2uAfc--V8GHQagWIHLVufnDN9eEYe?usp=sharing';
 
-  function setOpen(open) {
-    menu.classList.toggle('is-open', open);
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    toggle.setAttribute('aria-label', open ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (backdrop) {
-      backdrop.classList.toggle('is-open', open);
-      backdrop.hidden = !open;
-      backdrop.setAttribute('aria-hidden', open ? 'false' : 'true');
-    }
+function dmOpen() {
+  document.getElementById('dm-overlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  // Resetear al paso 1 por si ya pasó por el paso 2
+  document.getElementById('dm-step1').classList.add('active');
+  document.getElementById('dm-step2').classList.remove('active');
+  document.getElementById('dm-nombre').value = '';
+  document.getElementById('dm-wapp').value = '';
+  document.getElementById('dm-rubro').value = '';
+  setTimeout(() => document.getElementById('dm-nombre').focus(), 200);
+}
+
+function dmClose() {
+  document.getElementById('dm-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function dmClickOutside(e) {
+  if (e.target === document.getElementById('dm-overlay')) dmClose();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') dmClose(); });
+
+function dmSubmit(e) {
+  e.preventDefault();
+  const nombre = document.getElementById('dm-nombre').value.trim();
+  const wapp   = document.getElementById('dm-wapp').value.trim();
+  const rubro  = document.getElementById('dm-rubro').value;
+
+  // Validación básica
+  let ok = true;
+  ['dm-nombre','dm-wapp'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el.value.trim()) { el.classList.add('error'); ok = false; }
+    else el.classList.remove('error');
+  });
+  if (!ok) return;
+
+  // Mostrar paso 2
+  document.getElementById('dm-step1').classList.remove('active');
+  document.getElementById('dm-step2').classList.add('active');
+  document.getElementById('dm-nombre-ok').textContent = nombre;
+
+  // Notificar a Germán por WhatsApp con los datos del prospecto
+  const rubroTexto = rubro ? `\nNegocio: ${rubro}` : '';
+  const msg = `🎉 *Nueva descarga de DEMO*\n\nNombre: ${nombre}\nWhatsApp: ${wapp}${rubroTexto}\n\n_Enviado automáticamente desde la web_`;
+  const waUrl = `https://wa.me/${GERMAN_WA}?text=${encodeURIComponent(msg)}`;
+  setTimeout(() => window.open(waUrl, '_blank'), 600);
+
+  // Analytics
+  if (window.gtag) gtag('event', 'demo_form_submit', { rubro: rubro || 'sin_rubro' });
+}
+
+function dmTrackDownload() {
+  if (window.gtag) gtag('event', 'demo_download_click');
+}
+
+// Interceptar TODOS los botones/links de descarga DEMO
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('a[href*="drive.google.com"], .demo-download-btn').forEach(el => {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      dmOpen();
+    });
+  });
+
+  // El botón del nav también
+  const navCta = document.querySelector('.nav-cta');
+  if (navCta && navCta.getAttribute('href') === '#demo') {
+    // Solo scrollea, no abre modal — el modal se abre desde botones de descarga
   }
+});
 
-  toggle.addEventListener('click', function () {
-    setOpen(!menu.classList.contains('is-open'));
-  });
-
-  if (backdrop) {
-    backdrop.addEventListener('click', function () { setOpen(false); });
-  }
-
-  menu.querySelectorAll('a[href^="#"]').forEach(function (a) {
-    a.addEventListener('click', function () { setOpen(false); });
-  });
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') setOpen(false);
-  });
-
-  window.addEventListener('resize', function () {
-    if (window.innerWidth > 768) setOpen(false);
-  });
-})();
-
-// Selector de rubros
+// ── SELECTOR DE RUBROS ──
 function setRubroTab(rubro, btn) {
   document.querySelectorAll('.rubro-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.rubro-tab').forEach(b => b.classList.remove('active'));
@@ -1606,19 +1714,29 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// Eventos personalizados en GA4 (gtag ya está definido en <head>)
-document.addEventListener('DOMContentLoaded', function () {
-  if (typeof gtag !== 'function') return;
-  document.querySelectorAll('a[href*="wa.me"]').forEach(function (el) {
-    el.addEventListener('click', function () { gtag('event', 'whatsapp_click'); });
+// Google Analytics (opcional)
+(function () {
+  window.GESTIONYA_GA_ID = 'G-XXXXXXXXXX';
+  var gaId = window.GESTIONYA_GA_ID;
+  if (!gaId || /XXXX/.test(gaId)) return;
+  var gtagScript = document.createElement('script');
+  gtagScript.async = true;
+  gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(gaId);
+  document.head.appendChild(gtagScript);
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', gaId);
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function (el) {
+      el.addEventListener('click', function () { gtag('event', 'whatsapp_click'); });
+    });
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function (el) {
+      el.addEventListener('click', function () { gtag('event', 'email_click'); });
+    });
   });
-  document.querySelectorAll('a[href^="mailto:"]').forEach(function (el) {
-    el.addEventListener('click', function () { gtag('event', 'email_click'); });
-  });
-  document.querySelectorAll('a[href*="drive.google.com"]').forEach(function (el) {
-    el.addEventListener('click', function () { gtag('event', 'demo_download_click'); });
-  });
-});
+})();
 </script>
 </body>
 </html>

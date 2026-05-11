@@ -2,10 +2,23 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>GestiónYa — Soluciones de Software para tu Negocio</title>
 <meta name="description" content="Software de ventas, páginas web profesionales y agenda de turnos online. DEMO gratis por 7 días. Sin tarjeta de crédito.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:title" content="GestiónYa — Soluciones de Software para tu Negocio">
+<meta property="og:description" content="Software de ventas, páginas web profesionales y agenda de turnos online. DEMO gratis por 7 días. Sin tarjeta de crédito.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GestiónYa — Soluciones de Software para tu Negocio">
+<meta name="twitter:description" content="Software de ventas, páginas web y agenda de turnos. DEMO 7 días gratis, sin tarjeta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"GestiónYa","description":"Software de ventas, páginas web profesionales y agenda de turnos online para comercios y profesionales en Argentina.","areaServed":{"@type":"Country","name":"Argentina"},"email":"germangd23@gmail.com","contactPoint":[{"@type":"ContactPoint","contactType":"sales","availableLanguage":["Spanish"],"telephone":"+54-9-11-3929-2488"}]}
+</script>
 <style>
 :root {
   --negro: #0a0a0a;
@@ -22,11 +35,44 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-badge-dot { animation: none !important; }
+  .fade-up { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  z-index: 10001;
+  padding: 12px 18px;
+  background: var(--verde);
+  color: var(--negro);
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  border-radius: var(--radio);
+  text-decoration: none;
+}
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+  outline: 2px solid var(--blanco);
+  outline-offset: 3px;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--verde);
+  outline-offset: 3px;
+}
 body {
   font-family: 'DM Sans', sans-serif;
   background: var(--negro);
   color: var(--blanco);
   overflow-x: hidden;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 h1, h2, h3, .display { font-family: 'Syne', sans-serif; }
 a { color: inherit; text-decoration: none; }
@@ -35,7 +81,7 @@ a { color: inherit; text-decoration: none; }
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 40px;
+  padding: max(18px, env(safe-area-inset-top)) max(40px, env(safe-area-inset-right)) 18px max(40px, env(safe-area-inset-left));
   background: rgba(10,10,10,0.88);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -91,6 +137,8 @@ nav {
 .hero-content { position: relative; z-index: 1; max-width: 820px; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
+  flex-wrap: wrap;
+  max-width: 100%;
   background: rgba(184,245,66,0.1); border: 1px solid rgba(184,245,66,0.25);
   border-radius: 20px; padding: 6px 14px;
   font-size: 12px; font-weight: 500; color: var(--verde);
@@ -435,8 +483,17 @@ section.full-width { max-width: none; padding: 100px 40px; }
 /* ── COMPARACIÓN ── */
 .comparacion { background: var(--gris); max-width: none; }
 .comparacion .inner { max-width: 1200px; margin: 0 auto; }
+.comp-table-scroll {
+  width: 100%;
+  max-width: 900px;
+  margin: 60px auto 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+.comp-table-scroll .comp-table { margin-top: 0; min-width: 520px; }
 .comp-table {
-  width: 100%; max-width: 900px; margin: 60px auto 0;
+  width: 100%;
   border-collapse: collapse; font-size: 14px;
 }
 .comp-table th, .comp-table td {
@@ -451,6 +508,61 @@ section.full-width { max-width: none; padding: 100px 40px; }
 .comp-table .destacado { background: rgba(184,245,66,0.04); color: var(--blanco); font-weight: 500; }
 .comp-table .destacado .check { color: var(--verde); font-weight: 700; }
 .comp-table .cross { color: #555; }
+
+/* ── SECCIÓN WEB (grillas responsive; antes inline y no se adaptaban) ── */
+.section-webs {
+  background: var(--negro);
+  max-width: none;
+  padding: 100px max(16px, env(safe-area-inset-left)) 100px max(16px, env(safe-area-inset-right));
+}
+@media (min-width: 769px) {
+  .section-webs {
+    padding-left: max(40px, env(safe-area-inset-left));
+    padding-right: max(40px, env(safe-area-inset-right));
+  }
+}
+.webs-inner { max-width: 1200px; margin: 0 auto; }
+.webs-triple-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+.webs-triple-grid > div {
+  background: var(--negro);
+  padding: 36px 28px;
+}
+.webs-triple-grid > div:nth-child(2) {
+  border-left: 1px solid rgba(255,255,255,.06);
+  border-right: 1px solid rgba(255,255,255,.06);
+}
+.webs-double-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.webs-mock-slots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+.webs-cta-block {
+  background: linear-gradient(135deg, rgba(184,245,66,0.06), rgba(184,245,66,0.02));
+  border: 1px solid rgba(184,245,66,0.15);
+  border-radius: 12px;
+  padding: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
 
 /* ── PRECIOS ── */
 #precios { background: var(--negro); }
@@ -616,12 +728,52 @@ footer p { margin-top: 6px; }
 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
-  nav { padding: 16px 20px; }
+  nav {
+    padding-top: max(16px, env(safe-area-inset-top));
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+    padding-bottom: 16px;
+  }
   .nav-links { display: none; }
-  .hero { padding: 100px 20px 60px; }
-  section { padding: 60px 20px; }
-  .demo-section { padding: 60px 20px; }
-  section.full-width, .caso-exito, .problema, #servicios, .comparacion, .cta-final, .demo-section { padding: 60px 20px; }
+  .nav-cta {
+    min-height: 44px;
+    padding: 10px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    touch-action: manipulation;
+  }
+  .hero { padding: 100px max(16px, env(safe-area-inset-left)) 60px max(16px, env(safe-area-inset-right)); }
+  .hero-sub { font-size: 17px; }
+  section { padding: 60px max(16px, env(safe-area-inset-left)) 60px max(16px, env(safe-area-inset-right)); }
+  .demo-section { padding: 60px max(16px, env(safe-area-inset-left)) 60px max(16px, env(safe-area-inset-right)); }
+  section.full-width, .caso-exito, .problema, #servicios, .comparacion, .cta-final, .demo-section {
+    padding: 60px max(16px, env(safe-area-inset-left)) 60px max(16px, env(safe-area-inset-right));
+  }
+  .section-webs { padding-top: 60px; padding-bottom: 60px; }
+  .webs-triple-grid { grid-template-columns: 1fr; }
+  .webs-triple-grid > div { padding: 24px 18px; }
+  .webs-triple-grid > div + div { border-top: 1px solid rgba(255,255,255,.06); }
+  .webs-triple-grid > div:nth-child(2) {
+    border-left: none;
+    border-right: none;
+  }
+  .webs-double-grid { grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px; }
+  .webs-mock-slots { grid-template-columns: repeat(2, 1fr); }
+  .webs-cta-block { padding: 24px 18px; flex-direction: column; align-items: stretch; }
+  .rubro-tab {
+    min-height: 48px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .servicio-tag {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    touch-action: manipulation;
+  }
+  .btn-primary-lg, .btn-secondary-lg { touch-action: manipulation; min-height: 48px; }
   .stats { gap: 28px; margin-top: 48px; padding-top: 32px; }
   .servicios-grid { grid-template-columns: 1fr; }
   .problema-grid { grid-template-columns: 1fr; }
@@ -631,13 +783,15 @@ footer p { margin-top: 6px; }
   .faq-grid { grid-template-columns: 1fr; }
   .caso-content { grid-template-columns: 1fr; gap: 40px; }
   .caso-metricas { grid-template-columns: 1fr; }
+  .comp-table-scroll { margin-left: 0; margin-right: 0; max-width: none; }
   .comp-table { font-size: 12px; }
   .comp-table th, .comp-table td { padding: 12px 8px; }
-  .demo-download-btn { font-size: 16px; padding: 16px 32px; }
+  .demo-download-btn { font-size: 16px; padding: 16px 32px; min-height: 52px; }
   .rubro-panel.active { grid-template-columns: 1fr; }
   .rubro-prob-grid { grid-template-columns: 1fr; }
   .rubro-tab span:last-child { display: none; }
   .proceso-step::after { display: none; }
+  footer { padding: 40px max(16px, env(safe-area-inset-left)) max(40px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-right)); }
 }
 @media (max-width: 480px) {
   .proceso-grid { grid-template-columns: 1fr; }
@@ -649,7 +803,7 @@ footer p { margin-top: 6px; }
   background: rgba(0,0,0,.85);
   backdrop-filter: blur(6px);
   display: flex; align-items: center; justify-content: center;
-  padding: 20px;
+  padding: max(20px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
   opacity: 0; pointer-events: none;
   transition: opacity .25s;
 }
@@ -777,9 +931,10 @@ footer p { margin-top: 6px; }
 </style>
 </head>
 <body>
-
+<a href="#main-content" class="skip-link">Saltar al contenido</a>
 <!-- NAV -->
-<nav>
+<header>
+<nav aria-label="Principal">
   <div class="nav-logo">
     <span class="nav-logo-dot"></span>
     GestiónYa
@@ -795,7 +950,8 @@ footer p { margin-top: 6px; }
   </div>
   <a href="#demo" class="nav-cta">⬇️ Descargar DEMO</a>
 </nav>
-
+</header>
+<main id="main-content">
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
@@ -853,7 +1009,7 @@ footer p { margin-top: 6px; }
           <li>Reportes diarios, semanales y mensuales</li>
           <li>Gestión por empleado y turno</li>
         </ul>
-        <button class="servicio-tag" onclick="dmOpen()">DEMO GRATIS ↓</button>
+        <button type="button" class="servicio-tag" onclick="dmOpen()">DEMO GRATIS ↓</button>
       </div>
       <div class="servicio-card">
         <span class="servicio-icon">🌐</span>
@@ -893,15 +1049,15 @@ footer p { margin-top: 6px; }
     </div>
 
     <div class="rubros-tabs fade-up">
-      <button class="rubro-tab active" onclick="setRubroTab('kiosco', this)">
+      <button type="button" class="rubro-tab active" onclick="setRubroTab('kiosco', this)">
         <span class="tab-ico">🏪</span>
         <span>Kioscos y almacenes</span>
       </button>
-      <button class="rubro-tab" onclick="setRubroTab('estetica', this)">
+      <button type="button" class="rubro-tab" onclick="setRubroTab('estetica', this)">
         <span class="tab-ico">💇</span>
         <span>Peluquerías y estéticas</span>
       </button>
-      <button class="rubro-tab" onclick="setRubroTab('ropa', this)">
+      <button type="button" class="rubro-tab" onclick="setRubroTab('ropa', this)">
         <span class="tab-ico">👕</span>
         <span>Ropa e indumentaria</span>
       </button>
@@ -1193,8 +1349,8 @@ footer p { margin-top: 6px; }
           Además del software de gestión, María Emilia cuenta con su propia página web con sistema de reservas online. Un ecosistema completo aplicado a una estética real.
         </p>
         <div class="caso-links">
-          <a href="https://estetica-maria-emilia.vercel.app" target="_blank" class="caso-link">🌐 Ver su página web</a>
-          <a href="https://www.instagram.com/mariaemilia_estetica_" target="_blank" class="caso-link">📸 Instagram</a>
+          <a href="https://estetica-maria-emilia.vercel.app" target="_blank" rel="noopener noreferrer" class="caso-link">🌐 Ver su página web</a>
+          <a href="https://www.instagram.com/mariaemilia_estetica_" target="_blank" rel="noopener noreferrer" class="caso-link">📸 Instagram</a>
         </div>
       </div>
       <div class="caso-visual">
@@ -1245,8 +1401,8 @@ footer p { margin-top: 6px; }
 </section>
 
 <!-- PÁGINAS WEB -->
-<section id="webs" style="background: var(--negro); max-width: none; padding: 100px 40px;">
-  <div style="max-width: 1200px; margin: 0 auto;">
+<section id="webs" class="section-webs">
+  <div class="webs-inner">
     <div class="fade-up">
       <div class="section-label">Desarrollo web</div>
       <h2 class="section-title">Tu negocio en internet,<br>con presencia <span style="color:var(--verde)">profesional</span></h2>
@@ -1254,8 +1410,8 @@ footer p { margin-top: 6px; }
     </div>
 
     <!-- TIPOS DE SITIO -->
-    <div class="fade-up" style="display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.06); border-radius: 12px; overflow: hidden; margin-bottom: 60px;">
-      <div style="background: var(--negro); padding: 36px 28px;">
+    <div class="fade-up webs-triple-grid">
+      <div>
         <div style="font-size: 28px; margin-bottom: 16px;">🏪</div>
         <h3 style="font-size: 17px; font-weight: 600; margin-bottom: 8px;">Landing page</h3>
         <p style="font-size: 13px; color: var(--gris-texto); line-height: 1.6; margin-bottom: 16px;">Una sola página enfocada en convertir visitas en consultas. Ideal para rubros de servicio: peluquerías, talleres, profesionales.</p>
@@ -1266,7 +1422,7 @@ footer p { margin-top: 6px; }
           <li style="padding-left:18px; position:relative;"><span style="position:absolute;left:0;color:var(--verde);">→</span>Formulario de contacto</li>
         </ul>
       </div>
-      <div style="background: var(--negro); padding: 36px 28px; border-left: 1px solid rgba(255,255,255,.06); border-right: 1px solid rgba(255,255,255,.06);">
+      <div>
         <div style="font-size: 28px; margin-bottom: 16px;">📅</div>
         <h3 style="font-size: 17px; font-weight: 600; margin-bottom: 8px;">Web + Agenda de turnos</h3>
         <p style="font-size: 13px; color: var(--gris-texto); line-height: 1.6; margin-bottom: 16px;">Página web con sistema de reservas online integrado. Tus clientes eligen día y horario desde el celular, sin llamarte.</p>
@@ -1278,7 +1434,7 @@ footer p { margin-top: 6px; }
         </ul>
         <div style="margin-top: 18px; display: inline-block; background: rgba(184,245,66,0.12); border: 1px solid rgba(184,245,66,0.3); border-radius: 4px; padding: 4px 10px; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 11px; color: var(--verde); letter-spacing: 1px;">MÁS PEDIDO</div>
       </div>
-      <div style="background: var(--negro); padding: 36px 28px;">
+      <div>
         <div style="font-size: 28px; margin-bottom: 16px;">🏢</div>
         <h3 style="font-size: 17px; font-weight: 600; margin-bottom: 8px;">Sitio corporativo</h3>
         <p style="font-size: 13px; color: var(--gris-texto); line-height: 1.6; margin-bottom: 16px;">Sitio multi-sección para negocios que necesitan mostrar catálogo, equipo, servicios y generar consultas de mayor valor.</p>
@@ -1292,7 +1448,7 @@ footer p { margin-top: 6px; }
     </div>
 
     <!-- QUÉ INCLUYE TODA WEB -->
-    <div class="fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 60px;">
+    <div class="fade-up webs-double-grid">
       <div>
         <div class="section-label">Qué incluye</div>
         <h3 style="font-family:'Syne',sans-serif; font-weight:800; font-size: clamp(22px,3vw,34px); letter-spacing:-0.5px; line-height:1.1; margin-bottom: 20px;">Todo lo necesario<br>para estar online.</h3>
@@ -1335,7 +1491,7 @@ footer p { margin-top: 6px; }
           <div style="background: rgba(255,255,255,.03); border-radius: 6px; padding: 14px; margin-bottom: 10px;">
             <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:18px;margin-bottom:5px;">Elegí tu turno online</div>
             <div style="font-size:12px;color:var(--gris-texto);margin-bottom:12px;">Reservá en segundos. Sin llamadas.</div>
-            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:5px;">
+            <div class="webs-mock-slots">
               <div style="background:rgba(255,255,255,.05);border-radius:4px;padding:6px;text-align:center;font-size:11px;">Lun<br><strong>10:00</strong></div>
               <div style="background:rgba(184,245,66,.15);border:1px solid rgba(184,245,66,.3);border-radius:4px;padding:6px;text-align:center;font-size:11px;color:var(--verde);">Mar<br><strong>11:30</strong></div>
               <div style="background:rgba(255,255,255,.05);border-radius:4px;padding:6px;text-align:center;font-size:11px;">Mié<br><strong>14:00</strong></div>
@@ -1351,12 +1507,12 @@ footer p { margin-top: 6px; }
     </div>
 
     <!-- EJEMPLO REAL + CTA -->
-    <div class="fade-up" style="background: linear-gradient(135deg, rgba(184,245,66,0.06), rgba(184,245,66,0.02)); border: 1px solid rgba(184,245,66,0.15); border-radius: 12px; padding: 36px; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;">
+    <div class="fade-up webs-cta-block">
       <div>
         <div style="font-size:11px;font-weight:600;letter-spacing:2px;color:var(--verde);text-transform:uppercase;margin-bottom:8px;">Ejemplo real</div>
         <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:20px;margin-bottom:8px;">María Emilia Estética tiene su web con reservas online</h3>
         <p style="font-size:14px;color:var(--gris-texto);max-width:480px;line-height:1.6;">Sus clientes reservan turno desde Instagram directo a la web, sin llamarla. El sistema gestiona los horarios y manda recordatorios automáticos.</p>
-        <a href="https://estetica-maria-emilia.vercel.app" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:13px;color:var(--verde);border-bottom:1px solid rgba(184,245,66,.3);padding-bottom:2px;">🌐 Ver su página web →</a>
+        <a href="https://estetica-maria-emilia.vercel.app" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:13px;color:var(--verde);border-bottom:1px solid rgba(184,245,66,.3);padding-bottom:2px;">🌐 Ver su página web →</a>
       </div>
       <div style="display:flex;flex-direction:column;gap:12px;flex-shrink:0;">
         <a href="https://wa.me/5491139292488?text=Hola!%20Quiero%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" target="_blank" rel="noopener" class="btn-primary-lg">💬 Quiero mi página web →</a>
@@ -1373,14 +1529,14 @@ footer p { margin-top: 6px; }
       <div class="section-label">Comparación</div>
       <h2 class="section-title">¿Por qué GestiónYa?</h2>
     </div>
-    <div class="fade-up">
+    <div class="fade-up comp-table-scroll">
       <table class="comp-table">
         <thead>
           <tr>
-            <th>Característica</th>
-            <th class="destacado">GestiónYa</th>
-            <th>Excel</th>
-            <th>Sistemas caros</th>
+            <th scope="col">Característica</th>
+            <th scope="col" class="destacado">GestiónYa</th>
+            <th scope="col">Excel</th>
+            <th scope="col">Sistemas caros</th>
           </tr>
         </thead>
         <tbody>
@@ -1536,6 +1692,7 @@ footer p { margin-top: 6px; }
     </div>
   </div>
 </section>
+</main>
 
 <!-- FOOTER -->
 <footer>
@@ -1554,7 +1711,7 @@ footer p { margin-top: 6px; }
       <div class="dm-dot" style="background:#28c840"></div>
       <div class="dm-url">gestionya — descarga segura</div>
     </div>
-    <button class="dm-close" onclick="dmClose()" aria-label="Cerrar">✕</button>
+    <button type="button" class="dm-close" onclick="dmClose()" aria-label="Cerrar">✕</button>
 
     <div class="dm-body">
 
@@ -1708,11 +1865,15 @@ function setRubroTab(rubro, btn) {
   btn.classList.add('active');
 }
 
-// Animaciones al hacer scroll
+// Animaciones al hacer scroll (deja de observar una vez visible = menos trabajo en scroll)
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.08 });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('visible');
+    observer.unobserve(e.target);
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
+document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
 
 // Google Analytics (opcional)
 (function () {

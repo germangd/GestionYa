@@ -102,6 +102,62 @@ nav {
   font-size: 14px; color: var(--gris-texto);
 }
 .nav-links a:hover { color: var(--blanco); }
+.nav-end {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: auto;
+}
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radio);
+  cursor: pointer;
+  flex-shrink: 0;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav-burger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--blanco);
+  border-radius: 1px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+body.nav-open .nav-burger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+body.nav-open .nav-burger span:nth-child(2) { opacity: 0; }
+body.nav-open .nav-burger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+.nav-menu-panel {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: rgba(0,0,0,0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+body.nav-open .nav-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
 .nav-cta {
   background: var(--verde); color: var(--negro);
   font-family: 'Syne', sans-serif; font-weight: 700;
@@ -109,8 +165,16 @@ nav {
   border: none; border-radius: var(--radio);
   cursor: pointer; text-decoration: none;
   transition: transform 0.15s, box-shadow 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(184,245,66,0.35); }
+@media (prefers-reduced-motion: reduce) {
+  body.nav-open .nav-burger span { transition: none; }
+  .nav-menu-panel { transition: none !important; }
+  .nav-backdrop { transition: none; }
+}
 
 /* ── HERO ── */
 .hero {
@@ -734,12 +798,53 @@ footer p { margin-top: 6px; }
     padding-right: max(16px, env(safe-area-inset-right));
     padding-bottom: 16px;
   }
-  .nav-links { display: none; }
+  .nav-burger {
+    display: flex;
+  }
+  .nav-menu-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(300px, 88vw);
+    z-index: 101;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    padding: max(72px, calc(env(safe-area-inset-top) + 52px)) max(20px, env(safe-area-inset-right)) max(32px, env(safe-area-inset-bottom)) 24px;
+    background: rgba(12,12,12,0.98);
+    border-left: 1px solid rgba(255,255,255,0.08);
+    box-shadow: -12px 0 40px rgba(0,0,0,0.45);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.25s ease, visibility 0.25s;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  body.nav-open .nav-menu-panel {
+    transform: translateX(0);
+    visibility: visible;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .nav-links a {
+    padding: 16px 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 16px;
+    color: var(--blanco);
+  }
+  .nav-links a:hover { color: var(--verde); }
   .nav-cta {
-    min-height: 44px;
-    padding: 10px 16px;
-    display: inline-flex;
-    align-items: center;
+    margin-top: 20px;
+    min-height: 48px;
+    padding: 14px 18px;
+    font-size: 14px;
+    width: 100%;
     justify-content: center;
     touch-action: manipulation;
   }
@@ -939,18 +1044,26 @@ footer p { margin-top: 6px; }
     <span class="nav-logo-dot"></span>
     GestiónYa
   </div>
-  <div class="nav-links">
-    <a href="#servicios">Servicios</a>
-    <a href="#rubros">Por rubro</a>
-    <a href="#demo">DEMO gratis</a>
-    <a href="#webs">Páginas web</a>
-    <a href="#proceso">Cómo trabajamos</a>
-    <a href="#precios">Precios</a>
-    <a href="#contacto">Contacto</a>
+  <div class="nav-end">
+    <button type="button" class="nav-burger" id="nav-menu-btn" aria-expanded="false" aria-controls="nav-menu-panel" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-menu-panel" id="nav-menu-panel">
+      <div class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#rubros">Por rubro</a>
+        <a href="#demo">DEMO gratis</a>
+        <a href="#webs">Páginas web</a>
+        <a href="#proceso">Cómo trabajamos</a>
+        <a href="#precios">Precios</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <a href="#demo" class="nav-cta">⬇️ Descargar DEMO</a>
+    </div>
   </div>
-  <a href="#demo" class="nav-cta">⬇️ Descargar DEMO</a>
 </nav>
 </header>
+<div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
 <main id="main-content">
 <!-- HERO -->
 <section class="hero">
@@ -1785,6 +1898,7 @@ const GERMAN_WA = '5491139292488';
 const DRIVE_LINK = 'https://drive.google.com/drive/folders/10hn2uAfc--V8GHQagWIHLVufnDN9eEYe?usp=sharing';
 
 function dmOpen() {
+  if (typeof navClose === 'function') navClose();
   document.getElementById('dm-overlay').classList.add('active');
   document.body.style.overflow = 'hidden';
   // Resetear al paso 1 por si ya pasó por el paso 2
@@ -1798,14 +1912,48 @@ function dmOpen() {
 
 function dmClose() {
   document.getElementById('dm-overlay').classList.remove('active');
-  document.body.style.overflow = '';
+  document.body.style.overflow = document.body.classList.contains('nav-open') ? 'hidden' : '';
 }
 
 function dmClickOutside(e) {
   if (e.target === document.getElementById('dm-overlay')) dmClose();
 }
 
-document.addEventListener('keydown', e => { if (e.key === 'Escape') dmClose(); });
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+  if (document.body.classList.contains('nav-open')) {
+    navClose();
+    return;
+  }
+  dmClose();
+});
+
+function navClose() {
+  document.body.classList.remove('nav-open');
+  const btn = document.getElementById('nav-menu-btn');
+  const bd = document.getElementById('nav-backdrop');
+  if (btn) {
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Abrir menú');
+  }
+  if (bd) bd.setAttribute('aria-hidden', 'true');
+  if (!document.getElementById('dm-overlay')?.classList.contains('active')) {
+    document.body.style.overflow = '';
+  }
+}
+
+function navToggle() {
+  const open = !document.body.classList.contains('nav-open');
+  document.body.classList.toggle('nav-open', open);
+  const btn = document.getElementById('nav-menu-btn');
+  const bd = document.getElementById('nav-backdrop');
+  if (btn) {
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  }
+  if (bd) bd.setAttribute('aria-hidden', open ? 'false' : 'true');
+  document.body.style.overflow = open ? 'hidden' : (document.getElementById('dm-overlay')?.classList.contains('active') ? 'hidden' : '');
+}
 
 function dmSubmit(e) {
   e.preventDefault();
@@ -1850,11 +1998,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // El botón del nav también
-  const navCta = document.querySelector('.nav-cta');
-  if (navCta && navCta.getAttribute('href') === '#demo') {
-    // Solo scrollea, no abre modal — el modal se abre desde botones de descarga
+  const navBtn = document.getElementById('nav-menu-btn');
+  const navBackdrop = document.getElementById('nav-backdrop');
+  const navPanel = document.getElementById('nav-menu-panel');
+  if (navBtn && navBackdrop && navPanel) {
+    navBtn.addEventListener('click', () => navToggle());
+    navBackdrop.addEventListener('click', () => navClose());
+    navPanel.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => navClose());
+    });
   }
+
+  const mqNav = window.matchMedia('(min-width: 769px)');
+  function navCloseIfDesktop() {
+    if (mqNav.matches) navClose();
+  }
+  if (mqNav.addEventListener) mqNav.addEventListener('change', navCloseIfDesktop);
+  else mqNav.addListener(navCloseIfDesktop);
 });
 
 // ── SELECTOR DE RUBROS ──

@@ -1953,6 +1953,12 @@ function navToggle() {
   }
   if (bd) bd.setAttribute('aria-hidden', open ? 'false' : 'true');
   document.body.style.overflow = open ? 'hidden' : (document.getElementById('dm-overlay')?.classList.contains('active') ? 'hidden' : '');
+  if (open) {
+    try {
+      if (typeof va === 'function') va('event', { name: 'nav_mobile_open' });
+    } catch (_) {}
+    if (window.gtag) gtag('event', 'nav_mobile_open');
+  }
 }
 
 function dmSubmit(e) {
@@ -2035,7 +2041,8 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
 document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
 
-// Google Analytics (opcional)
+// Google Analytics 4 (opcional): en https://analytics.google.com → Admin → Flujos de datos → elegí la web → "ID de medición" (formato G-XXXXXXXX).
+// Pegá ese ID abajo. Si dejás el placeholder, no se carga ningún script de Google.
 (function () {
   window.GESTIONYA_GA_ID = 'G-XXXXXXXXXX';
   var gaId = window.GESTIONYA_GA_ID;
@@ -2059,5 +2066,10 @@ document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
   });
 })();
 </script>
+<!-- Vercel Web Analytics: en https://vercel.com → tu proyecto GestionYa → pestaña Analytics → Enable. Luego redeploy (los scripts viven en `/_vercel/insights/`). -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

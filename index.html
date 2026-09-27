@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"GestiónYa","description":"Software de ventas, páginas web profesionales y agenda de turnos online para comercios y profesionales en Argentina.","areaServed":{"@type":"Country","name":"Argentina"},"email":"germangd23@gmail.com","contactPoint":[{"@type":"ContactPoint","contactType":"sales","availableLanguage":["Spanish"],"telephone":"+54-9-11-3929-2488"}]}
+{"@context":"https://schema.org","@type":"Organization","name":"GestiónYa","description":"Software de ventas, páginas web profesionales y agenda de turnos online para comercios y profesionales en Argentina.","areaServed":{"@type":"Country","name":"Argentina"},"email":"germangd23@gmail.com","contactPoint":[{"@type":"ContactPoint","contactType":"sales","availableLanguage":["Spanish"],"telephone":"+54-9-221-201-0063"}]}
 </script>
 <style>
 :root {
@@ -964,7 +964,7 @@ footer p { margin-top: 6px; }
   font-size: 11px; font-weight: 600; letter-spacing: .5px;
   text-transform: uppercase; color: var(--gris-texto);
 }
-.dm-field input, .dm-field select {
+.dm-field input, .dm-field select, .dm-field textarea {
   background: #1a1a1a; border: 1px solid rgba(255,255,255,.1);
   border-radius: var(--radio); padding: 13px 14px;
   color: var(--blanco); font-size: 14px;
@@ -972,7 +972,8 @@ footer p { margin-top: 6px; }
   transition: border-color .15s;
   outline: none;
 }
-.dm-field input:focus, .dm-field select:focus { border-color: var(--verde); }
+.dm-field textarea { min-height: 96px; resize: vertical; line-height: 1.5; }
+.dm-field input:focus, .dm-field select:focus, .dm-field textarea:focus { border-color: var(--verde); }
 .dm-field select option { background: #1a1a1a; }
 .dm-field input.error { border-color: #ff5b5b; }
 
@@ -1056,7 +1057,7 @@ footer p { margin-top: 6px; }
         <a href="#webs">Páginas web</a>
         <a href="#proceso">Cómo trabajamos</a>
         <a href="#precios">Precios</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#contacto" class="open-contacto">Contáctanos</a>
       </div>
       <a href="#demo" class="nav-cta">⬇️ Descargar DEMO</a>
     </div>
@@ -1134,7 +1135,7 @@ footer p { margin-top: 6px; }
           <li>Integración con WhatsApp y formularios</li>
           <li>Diseño adaptado a tu rubro</li>
         </ul>
-        <a class="servicio-tag" href="https://wa.me/5491139292488?text=Hola!%20Quiero%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" target="_blank" rel="noopener">CONSULTÁ →</a>
+        <a class="servicio-tag" href="https://wa.me/5492212010063?text=Hola!%20Quiero%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" target="_blank" rel="noopener">CONSULTÁ →</a>
       </div>
       <div class="servicio-card">
         <span class="servicio-icon">📅</span>
@@ -1146,7 +1147,7 @@ footer p { margin-top: 6px; }
           <li>Gestión de profesionales y horarios</li>
           <li>Panel de administración simple</li>
         </ul>
-        <a class="servicio-tag" href="https://wa.me/5491139292488?text=Hola!%20Quiero%20info%20sobre%20la%20agenda%20de%20turnos%20online" target="_blank" rel="noopener">CONSULTÁ →</a>
+        <a class="servicio-tag" href="https://wa.me/5492212010063?text=Hola!%20Quiero%20info%20sobre%20la%20agenda%20de%20turnos%20online" target="_blank" rel="noopener">CONSULTÁ →</a>
       </div>
     </div>
   </div>
@@ -1201,7 +1202,7 @@ footer p { margin-top: 6px; }
         </div>
         <div class="rubro-cta-strip">
           <div><strong>¿Tenés un kiosco o almacén?</strong><p>Probá la DEMO 7 días gratis, sin tarjeta.</p></div>
-          <a href="https://wa.me/5491139292488?text=Hola!%20Tengo%20un%20kiosco%20y%20me%20interesa%20GestionYa" target="_blank" rel="noopener" class="btn-primary-lg" style="font-size:13px;padding:12px 20px;">💬 Consultar →</a>
+          <a href="https://wa.me/5492212010063?text=Hola!%20Tengo%20un%20kiosco%20y%20me%20interesa%20GestionYa" target="_blank" rel="noopener" class="btn-primary-lg" style="font-size:13px;padding:12px 20px;">💬 Consultar →</a>
         </div>
       </div>
     </div>
@@ -1231,7 +1232,7 @@ footer p { margin-top: 6px; }
         </div>
         <div class="rubro-cta-strip">
           <div><strong>¿Tenés una peluquería o estética?</strong><p>Probá la DEMO 7 días gratis, sin tarjeta.</p></div>
-          <a href="https://wa.me/5491139292488?text=Hola!%20Tengo%20una%20estetica%20y%20me%20interesa%20GestionYa" target="_blank" rel="noopener" class="btn-primary-lg" style="font-size:13px;padding:12px 20px;">💬 Consultar →</a>
+          <a href="https://wa.me/5492212010063?text=Hola!%20Tengo%20una%20estetica%20y%20me%20interesa%20GestionYa" target="_blank" rel="noopener" class="btn-primary-lg" style="font-size:13px;padding:12px 20px;">💬 Consultar →</a>
         </div>
       </div>
     </div>
@@ -1261,7 +1262,7 @@ footer p { margin-top: 6px; }
         </div>
         <div class="rubro-cta-strip">
           <div><strong>¿Tenés un local de ropa?</strong><p>Probá la DEMO 7 días gratis, sin tarjeta.</p></div>
-          <a href="https://wa.me/5491139292488?text=Hola!%20Tengo%20un%20local%20de%20ropa%20y%20me%20interesa%20GestionYa" target="_blank" rel="noopener" class="btn-primary-lg" style="font-size:13px;padding:12px 20px;">💬 Consultar →</a>
+          <a href="https://wa.me/5492212010063?text=Hola!%20Tengo%20un%20local%20de%20ropa%20y%20me%20interesa%20GestionYa" target="_blank" rel="noopener" class="btn-primary-lg" style="font-size:13px;padding:12px 20px;">💬 Consultar →</a>
         </div>
       </div>
     </div>
@@ -1628,7 +1629,7 @@ footer p { margin-top: 6px; }
         <a href="https://estetica-maria-emilia.vercel.app" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:13px;color:var(--verde);border-bottom:1px solid rgba(184,245,66,.3);padding-bottom:2px;">🌐 Ver su página web →</a>
       </div>
       <div style="display:flex;flex-direction:column;gap:12px;flex-shrink:0;">
-        <a href="https://wa.me/5491139292488?text=Hola!%20Quiero%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" target="_blank" rel="noopener" class="btn-primary-lg">💬 Quiero mi página web →</a>
+        <a href="https://wa.me/5492212010063?text=Hola!%20Quiero%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" target="_blank" rel="noopener" class="btn-primary-lg">💬 Quiero mi página web →</a>
         <div style="text-align:center;font-size:12px;color:var(--gris-texto);">Propuesta a medida en menos de 24 hs</div>
       </div>
     </div>
@@ -1715,7 +1716,7 @@ footer p { margin-top: 6px; }
         <li>1 mes de soporte incluido</li>
         <li>Actualizaciones de seguridad</li>
       </ul>
-      <a href="https://wa.me/5491139292488?text=Hola!%20Quiero%20el%20plan%20PAGO%20UNICO%20de%20GestionYa" target="_blank" rel="noopener" class="precio-cta-btn secondary">
+      <a href="https://wa.me/5492212010063?text=Hola!%20Quiero%20el%20plan%20PAGO%20UNICO%20de%20GestionYa" target="_blank" rel="noopener" class="precio-cta-btn secondary">
         Consultar precio →
       </a>
     </div>
@@ -1732,7 +1733,7 @@ footer p { margin-top: 6px; }
         <li>Cambios y ajustes a pedido</li>
         <li>Cancelación libre cuando quieras</li>
       </ul>
-      <a href="https://wa.me/5491139292488?text=Hola!%20Quiero%20el%20plan%20MENSUAL%20de%20GestionYa" target="_blank" rel="noopener" class="precio-cta-btn">
+      <a href="https://wa.me/5492212010063?text=Hola!%20Quiero%20el%20plan%20MENSUAL%20de%20GestionYa" target="_blank" rel="noopener" class="precio-cta-btn">
         Consultar precio →
       </a>
     </div>
@@ -1795,13 +1796,13 @@ footer p { margin-top: 6px; }
       <a href="https://drive.google.com/drive/folders/10hn2uAfc--V8GHQagWIHLVufnDN9eEYe?usp=sharing" class="btn-primary-lg" target="_blank" rel="noopener">
         ⬇️ Descargar DEMO gratis →
       </a>
-      <a href="https://wa.me/5491139292488?text=Hola%2C%20quiero%20info%20sobre%20GestionYa" class="btn-secondary-lg" target="_blank" rel="noopener">
-        💬 O escribime por WhatsApp
+      <a href="#contacto" class="btn-secondary-lg open-contacto">
+        💬 Contáctanos
       </a>
     </div>
     <div class="contacto-extra">
       <a class="contacto-btn-outline" href="mailto:germangd23@gmail.com">✉️ germangd23@gmail.com</a>
-      <a class="contacto-btn-outline" href="https://wa.me/5491139292488" target="_blank" rel="noopener">📱 +54 9 11 3929-2488</a>
+      <a class="contacto-btn-outline" href="https://wa.me/5492212010063" target="_blank" rel="noopener">📱 +54 9 221 201-0063</a>
     </div>
   </div>
 </section>
@@ -1811,10 +1812,10 @@ footer p { margin-top: 6px; }
 <footer>
   <div class="footer-logo">GestiónYa</div>
   <p>Soluciones digitales para ventas y servicios · Hecho en Argentina 🇦🇷</p>
-  <p style="margin-top: 8px;">germangd23@gmail.com · +54 9 11 3929-2488</p>
+  <p style="margin-top: 8px;">germangd23@gmail.com · +54 9 221 201-0063</p>
 </footer>
 
-<!-- MODAL ONBOARDING DEMO -->
+<!-- MODAL CONTACTANOS -->
 <div class="dm-overlay" id="dm-overlay" onclick="dmClickOutside(event)">
   <div class="dm-modal" role="dialog" aria-modal="true" aria-labelledby="dm-title-text">
 
@@ -1822,17 +1823,16 @@ footer p { margin-top: 6px; }
       <div class="dm-dot" style="background:#ff5f57"></div>
       <div class="dm-dot" style="background:#ffbd2e"></div>
       <div class="dm-dot" style="background:#28c840"></div>
-      <div class="dm-url">gestionya — descarga segura</div>
+      <div class="dm-url">gestionya — contáctanos</div>
     </div>
     <button type="button" class="dm-close" onclick="dmClose()" aria-label="Cerrar">✕</button>
 
     <div class="dm-body">
 
-      <!-- PASO 1: FORMULARIO -->
       <div class="dm-step active" id="dm-step1">
-        <div class="dm-badge">⬇️ DEMO GRATIS · 7 días · Sin tarjeta</div>
-        <h2 class="dm-title" id="dm-title-text">Dejame tus datos y te mando el link ahora</h2>
-        <p class="dm-desc">Así puedo acompañarte durante la prueba y ayudarte si surge alguna duda con la instalación.</p>
+        <div class="dm-badge">💬 CONTACTO · Respondemos por WhatsApp</div>
+        <h2 class="dm-title" id="dm-title-text">Contáctanos</h2>
+        <p class="dm-desc">Dejanos tus datos y te escribimos. Sin compromiso, sin spam.</p>
 
         <form class="dm-form" onsubmit="dmSubmit(event)" novalidate>
           <div class="dm-field">
@@ -1841,7 +1841,7 @@ footer p { margin-top: 6px; }
           </div>
           <div class="dm-field">
             <label for="dm-wapp">WhatsApp *</label>
-            <input type="tel" id="dm-wapp" placeholder="Ej: 11 1234-5678" autocomplete="tel" required>
+            <input type="tel" id="dm-wapp" placeholder="Ej: 221 201-0063" autocomplete="tel" required>
           </div>
           <div class="dm-field">
             <label for="dm-rubro">Tipo de negocio (opcional)</label>
@@ -1856,36 +1856,32 @@ footer p { margin-top: 6px; }
               <option value="Otro">🏢 Otro</option>
             </select>
           </div>
+          <div class="dm-field">
+            <label for="dm-mensaje">Mensaje (opcional)</label>
+            <textarea id="dm-mensaje" placeholder="Contanos qué necesitás o en qué podemos ayudarte" maxlength="500"></textarea>
+          </div>
           <button type="submit" class="dm-submit">
-            <span>Mandarme el link de descarga</span> →
+            <span>Enviar consulta</span> →
           </button>
-          <p class="dm-fine">Tu número solo se usa para enviarte el link y soporte. Sin spam, sin publicidad.</p>
+          <p class="dm-fine">Tu número solo se usa para responderte. Sin spam, sin publicidad.</p>
         </form>
       </div>
 
-      <!-- PASO 2: ÉXITO + LINK -->
       <div class="dm-step" id="dm-step2">
-        <div class="dm-success-ico">🎉</div>
-        <h2 class="dm-success-title">¡Listo, <span id="dm-nombre-ok"></span>!</h2>
-        <p class="dm-success-sub">Tu DEMO está activa por <strong style="color:var(--verde)">7 días completos</strong>. Descargá ahora e instalá en menos de 3 minutos.</p>
-
-        <a href="https://drive.google.com/drive/folders/10hn2uAfc--V8GHQagWIHLVufnDN9eEYe?usp=sharing"
-           target="_blank" rel="noopener"
-           class="dm-download-btn"
-           onclick="dmTrackDownload()">
-          ⬇️ Descargar DEMO + Guía de instalación
-        </a>
+        <div class="dm-success-ico">✅</div>
+        <h2 class="dm-success-title">¡Gracias, <span id="dm-nombre-ok"></span>!</h2>
+        <p class="dm-success-sub">Recibimos tu consulta. Te escribimos por WhatsApp a la brevedad.</p>
 
         <div class="dm-wa-notif">
           <span class="dm-wa-ico">💬</span>
-          <p>Te voy a escribir por WhatsApp en los próximos minutos con el <strong>primer mensaje de bienvenida</strong> y la guía paso a paso.</p>
+          <p>Si preferís, también podés escribirnos ahora al <strong>+54 9 221 201-0063</strong>.</p>
         </div>
 
-        <div class="dm-steps-hint">
-          <div class="dm-hint-item"><span class="dm-hint-num">HOY</span><span>Descargá e instalá. Incluye guía paso a paso en la carpeta.</span></div>
-          <div class="dm-hint-item"><span class="dm-hint-num">D·1</span><span>Te escribo para ver si pudiste instalar y resolver cualquier duda.</span></div>
-          <div class="dm-hint-item"><span class="dm-hint-num">D·7</span><span>Si te gustó, elegimos juntos el plan que mejor se adapte a tu negocio.</span></div>
-        </div>
+        <a href="https://wa.me/5492212010063?text=Hola%2C%20quiero%20info%20sobre%20GestionYa"
+           target="_blank" rel="noopener"
+           class="dm-download-btn">
+          💬 Escribir por WhatsApp
+        </a>
       </div>
 
     </div>
@@ -1893,20 +1889,19 @@ footer p { margin-top: 6px; }
 </div>
 
 <script>
-// ── MODAL ONBOARDING DEMO ──
-const GERMAN_WA = '5491139292488';
-const DRIVE_LINK = 'https://drive.google.com/drive/folders/10hn2uAfc--V8GHQagWIHLVufnDN9eEYe?usp=sharing';
+// ── MODAL CONTACTANOS ──
+const GERMAN_WA = '5492212010063';
 
 function dmOpen() {
   if (typeof navClose === 'function') navClose();
   document.getElementById('dm-overlay').classList.add('active');
   document.body.style.overflow = 'hidden';
-  // Resetear al paso 1 por si ya pasó por el paso 2
   document.getElementById('dm-step1').classList.add('active');
   document.getElementById('dm-step2').classList.remove('active');
   document.getElementById('dm-nombre').value = '';
   document.getElementById('dm-wapp').value = '';
   document.getElementById('dm-rubro').value = '';
+  document.getElementById('dm-mensaje').value = '';
   setTimeout(() => document.getElementById('dm-nombre').focus(), 200);
 }
 
@@ -1966,8 +1961,8 @@ function dmSubmit(e) {
   const nombre = document.getElementById('dm-nombre').value.trim();
   const wapp   = document.getElementById('dm-wapp').value.trim();
   const rubro  = document.getElementById('dm-rubro').value;
+  const mensaje = document.getElementById('dm-mensaje').value.trim();
 
-  // Validación básica
   let ok = true;
   ['dm-nombre','dm-wapp'].forEach(id => {
     const el = document.getElementById(id);
@@ -1976,28 +1971,21 @@ function dmSubmit(e) {
   });
   if (!ok) return;
 
-  // Mostrar paso 2
   document.getElementById('dm-step1').classList.remove('active');
   document.getElementById('dm-step2').classList.add('active');
   document.getElementById('dm-nombre-ok').textContent = nombre;
 
-  // Notificar a Germán por WhatsApp con los datos del prospecto
   const rubroTexto = rubro ? `\nNegocio: ${rubro}` : '';
-  const msg = `🎉 *Nueva descarga de DEMO*\n\nNombre: ${nombre}\nWhatsApp: ${wapp}${rubroTexto}\n\n_Enviado automáticamente desde la web_`;
+  const mensajeTexto = mensaje ? `\nMensaje: ${mensaje}` : '';
+  const msg = `📬 *Nuevo contacto desde la web*\n\nNombre: ${nombre}\nWhatsApp: ${wapp}${rubroTexto}${mensajeTexto}\n\n_Enviado automáticamente desde la web_`;
   const waUrl = `https://wa.me/${GERMAN_WA}?text=${encodeURIComponent(msg)}`;
   setTimeout(() => window.open(waUrl, '_blank'), 600);
 
-  // Analytics
-  if (window.gtag) gtag('event', 'demo_form_submit', { rubro: rubro || 'sin_rubro' });
+  if (window.gtag) gtag('event', 'contact_form_submit', { rubro: rubro || 'sin_rubro' });
 }
 
-function dmTrackDownload() {
-  if (window.gtag) gtag('event', 'demo_download_click');
-}
-
-// Interceptar TODOS los botones/links de descarga DEMO
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('a[href*="drive.google.com"], .demo-download-btn').forEach(el => {
+  document.querySelectorAll('.open-contacto').forEach(el => {
     el.addEventListener('click', function (e) {
       e.preventDefault();
       dmOpen();

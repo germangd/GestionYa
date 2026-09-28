@@ -1,0 +1,13 @@
+{
+  "headers": [
+    {
+      "source": "/guia-instalacion.pdf",
+      "headers": [
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=\"GestionYa-guia-instalacion.pdf\""
+        }
+      ]
+    }
+  ]
+}

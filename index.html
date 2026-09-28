@@ -385,7 +385,16 @@ section.full-width { max-width: none; padding: 100px 40px; }
   box-shadow: 0 10px 30px rgba(184,245,66,0.3);
 }
 .demo-download-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(184,245,66,0.5); }
+.demo-download-row {
+  display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 8px;
+}
+.demo-download-btn.alt {
+  background: transparent; color: var(--verde);
+  border: 2px solid var(--verde); box-shadow: none;
+}
+.demo-download-btn.alt:hover { box-shadow: 0 10px 28px rgba(184,245,66,0.22); }
 .demo-small { font-size: 13px; color: var(--gris-texto); margin-top: 20px; }
+.demo-small a { color: var(--verde); text-decoration: underline; }
 
 /* ── PROBLEMA ── */
 .problema { background: var(--gris); max-width: none; }
@@ -892,6 +901,8 @@ footer p { margin-top: 6px; }
   .comp-table { font-size: 12px; }
   .comp-table th, .comp-table td { padding: 12px 8px; }
   .demo-download-btn { font-size: 16px; padding: 16px 32px; min-height: 52px; }
+  .demo-download-row { flex-direction: column; align-items: stretch; }
+  .demo-download-btn { justify-content: center; }
   .rubro-panel.active { grid-template-columns: 1fr; }
   .rubro-prob-grid { grid-template-columns: 1fr; }
   .rubro-tab span:last-child { display: none; }
@@ -1302,11 +1313,17 @@ footer p { margin-top: 6px; }
         <div class="demo-feature-desc">Descarga, doble click, listo en 3 minutos</div>
       </div>
     </div>
-    <a href="https://drive.google.com/drive/folders/10hn2uAfc--V8GHQagWIHLVufnDN9eEYe?usp=sharing" target="_blank" rel="noopener" class="demo-download-btn">
-      ⬇️ DESCARGAR DEMO + INSTRUCCIONES
-    </a>
+    <div class="demo-download-row">
+      <a href="https://github.com/germangd/GestionYa-updates/releases/download/v1.0.16/Registro-de-Ventas-Demo-1.0.16-win10-11-x64.exe" class="demo-download-btn" rel="noopener">
+        ⬇️ Windows 10 / 11
+      </a>
+      <a href="https://github.com/germangd/GestionYa-updates/releases/download/v1.0.16/Registro-de-Ventas-Demo-1.0.16-win7-ia32.exe" class="demo-download-btn alt" rel="noopener">
+        ⬇️ Windows 7 / 8
+      </a>
+    </div>
     <div class="demo-small">
-      Windows 7+ · Sin registro previo · Sin compromiso · Incluye guía de instalación
+      Prueba gratis 7 días · Sin registro · Sin tarjeta ·
+      <a href="https://drive.google.com/drive/folders/10hn2uAfc--V8GHQagWIHLVufnDN9eEYe?usp=sharing" target="_blank" rel="noopener">Guía de instalación</a>
     </div>
   </div>
 </section>
@@ -1793,7 +1810,7 @@ footer p { margin-top: 6px; }
     <h2>¿Arrancamos?</h2>
     <p>Probá la DEMO gratis 7 días. Si te gusta, elegimos juntos el plan que mejor se adapte a tu negocio. Propuesta a medida en menos de 24 horas.</p>
     <div class="cta-final-btns">
-      <a href="https://drive.google.com/drive/folders/10hn2uAfc--V8GHQagWIHLVufnDN9eEYe?usp=sharing" class="btn-primary-lg" target="_blank" rel="noopener">
+      <a href="#demo" class="btn-primary-lg">
         ⬇️ Descargar DEMO gratis →
       </a>
       <a href="#contacto" class="btn-secondary-lg open-contacto">

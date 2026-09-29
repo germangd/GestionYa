@@ -83,8 +83,18 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
   padding: max(18px, env(safe-area-inset-top)) max(40px, env(safe-area-inset-right)) 18px max(40px, env(safe-area-inset-left));
   background: rgba(10,10,10,0.88);
-  backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
+  overflow: visible;
+}
+nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(10,10,10,0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  pointer-events: none;
 }
 .nav-logo {
   font-family: 'Syne', sans-serif;
@@ -144,6 +154,23 @@ body.nav-open .nav-burger span:nth-child(3) {
   display: flex;
   align-items: center;
   gap: 28px;
+}
+@media (min-width: 769px) {
+  .nav-menu-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: auto;
+    height: auto;
+    z-index: 101;
+    padding: max(18px, env(safe-area-inset-top)) max(40px, env(safe-area-inset-right)) 18px 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    transform: none;
+    visibility: visible;
+    overflow: visible;
+  }
 }
 .nav-backdrop {
   position: fixed;
@@ -1136,10 +1163,14 @@ footer p { margin-top: 6px; }
     top: 0;
     right: 0;
     bottom: 0;
-    width: min(300px, 88vw);
-    z-index: 101;
+    left: auto;
+    height: 100vh;
+    height: 100dvh;
+    width: min(320px, 88vw);
+    z-index: 200;
     flex-direction: column;
     align-items: stretch;
+    justify-content: flex-start;
     gap: 0;
     margin: 0;
     padding: max(72px, calc(env(safe-area-inset-top) + 52px)) max(20px, env(safe-area-inset-right)) max(32px, env(safe-area-inset-bottom)) 24px;
@@ -1149,8 +1180,10 @@ footer p { margin-top: 6px; }
     transform: translateX(100%);
     visibility: hidden;
     transition: transform 0.25s ease, visibility 0.25s;
+    overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
   }
   body.nav-open .nav-menu-panel {
     transform: translateX(0);
@@ -1382,22 +1415,22 @@ footer p { margin-top: 6px; }
     <button type="button" class="nav-burger" id="nav-menu-btn" aria-expanded="false" aria-controls="nav-menu-panel" aria-label="Abrir menú">
       <span></span><span></span><span></span>
     </button>
-    <div class="nav-menu-panel" id="nav-menu-panel">
-      <div class="nav-links">
-        <a href="#servicios">Servicios</a>
-        <a href="#canchas">Canchas</a>
-        <a href="#rubros">Por rubro</a>
-        <a href="#demo">DEMO gratis</a>
-        <a href="#webs">Páginas web</a>
-        <a href="#proceso">Cómo trabajamos</a>
-        <a href="#precios">Precios</a>
-        <a href="#contacto" class="open-contacto">Contáctanos</a>
-      </div>
-      <a href="#demo" class="nav-cta">⬇️ Descargar DEMO</a>
-    </div>
   </div>
 </nav>
 </header>
+<div class="nav-menu-panel" id="nav-menu-panel">
+  <div class="nav-links">
+    <a href="#servicios">Servicios</a>
+    <a href="#canchas">Canchas</a>
+    <a href="#rubros">Por rubro</a>
+    <a href="#demo">DEMO gratis</a>
+    <a href="#webs">Páginas web</a>
+    <a href="#proceso">Cómo trabajamos</a>
+    <a href="#precios">Precios</a>
+    <a href="#contacto" class="open-contacto">Contáctanos</a>
+  </div>
+  <a href="#demo" class="nav-cta">⬇️ Descargar DEMO</a>
+</div>
 <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
 <main id="main-content">
 <!-- HERO -->

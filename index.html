@@ -401,169 +401,6 @@ section.full-width { max-width: none; padding: 100px 40px; }
   vertical-align: top;
 }
 
-@media (min-width: 769px) {
-  section,
-  section.full-width {
-    padding-top: clamp(40px, 7vh, 100px);
-    padding-bottom: clamp(40px, 7vh, 100px);
-  }
-  .section-title {
-    font-size: clamp(26px, 4.6vh, 52px);
-  }
-  .hero {
-    min-height: 100vh;
-    min-height: 100dvh;
-    box-sizing: border-box;
-    padding-top: clamp(80px, 12vh, 120px);
-    padding-bottom: clamp(32px, 6vh, 80px);
-  }
-  h1.hero-title {
-    font-size: clamp(40px, 9vh, 88px);
-    margin-bottom: clamp(12px, 2.4vh, 28px);
-  }
-  .hero-sub { margin-bottom: clamp(16px, 3vh, 44px); }
-  .hero-badge { margin-bottom: clamp(12px, 2vh, 28px); }
-  .stats {
-    margin-top: clamp(24px, 5vh, 72px);
-    padding-top: clamp(16px, 3vh, 48px);
-  }
-  #servicios {
-    min-height: 100vh;
-    min-height: 100dvh;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-  }
-  #canchas {
-    display: flex;
-    align-items: center;
-    min-height: 100vh;
-    min-height: 100dvh;
-    box-sizing: border-box;
-    padding-top: clamp(72px, 10vh, 88px);
-    padding-bottom: clamp(16px, 3vh, 36px);
-    scroll-margin-top: 0;
-  }
-  #canchas .inner { width: 100%; }
-  #canchas .section-title {
-    font-size: clamp(22px, 4.2vh, 40px);
-    margin-bottom: 1vh;
-  }
-  #canchas .section-sub {
-    font-size: clamp(13px, 1.85vh, 16px);
-    margin-bottom: 1vh;
-  }
-  .canchas-layout { margin-top: 0; gap: clamp(16px, 3vh, 36px); }
-  .canchas-legend { margin: 1vh 0 1.4vh; }
-  .canchas-list { gap: 0.55vh; margin-top: 1.4vh; }
-  .canchas-list li { font-size: clamp(12px, 1.65vh, 15px); line-height: 1.35; }
-  .canchas-video-wrap video {
-    max-height: min(68vh, calc(100dvh - 130px));
-    object-fit: contain;
-  }
-}
-
-@media (min-width: 769px) and (max-height: 940px) {
-  section,
-  section.full-width,
-  .demo-section,
-  .caso-exito,
-  .problema,
-  .comparacion,
-  .cta-final,
-  .section-webs {
-    padding-top: 56px;
-    padding-bottom: 56px;
-  }
-  section[id] { scroll-margin-top: 64px; }
-  .hero {
-    padding-top: 84px;
-    padding-bottom: 36px;
-  }
-  h1.hero-title {
-    font-size: clamp(40px, 7vh, 64px);
-    margin-bottom: 16px;
-  }
-  .hero-sub { font-size: 16px; margin-bottom: 20px; }
-  .hero-badge { margin-bottom: 14px; }
-  .section-title {
-    font-size: clamp(26px, 3.2vw, 36px);
-    margin-bottom: 12px;
-  }
-  .section-label { margin-bottom: 8px; }
-  .section-sub { font-size: 14px; line-height: 1.5; margin-bottom: 12px; }
-  #servicios { padding-top: 72px; padding-bottom: 28px; }
-  .servicios-grid { margin-top: 20px; }
-  .servicio-card { padding: 20px 22px; }
-  .servicio-icon { font-size: 24px; margin-bottom: 8px; }
-  .servicio-card h3 { font-size: 17px; margin-bottom: 8px; }
-  .servicio-card p { font-size: 13px; margin-bottom: 12px; line-height: 1.45; }
-  .servicio-card ul { gap: 5px; }
-  .servicio-card li { font-size: 12.5px; }
-  .servicio-tag { margin-top: 10px; }
-  #canchas {
-    padding-top: 64px;
-    padding-bottom: 16px;
-    scroll-margin-top: 0;
-  }
-  #canchas .section-title { font-size: clamp(24px, 3vw, 32px); }
-  .canchas-legend { margin: 10px 0 12px; }
-  .canchas-list { gap: 6px; margin-bottom: 16px; }
-  .canchas-list li { font-size: 13px; line-height: 1.35; }
-  .canchas-video-wrap video { max-height: calc(100dvh - 110px); }
-  .btn-primary-lg, .btn-secondary-lg { padding: 12px 24px; font-size: 14px; }
-}
-
-@media (min-width: 769px) and (max-height: 800px) {
-  section,
-  section.full-width,
-  .demo-section,
-  .caso-exito,
-  .problema,
-  .comparacion,
-  .cta-final,
-  .section-webs {
-    padding-top: 36px;
-    padding-bottom: 36px;
-  }
-  .hero {
-    padding-top: 72px;
-    padding-bottom: 20px;
-  }
-  h1.hero-title {
-    font-size: clamp(32px, 6.2vh, 52px);
-    margin-bottom: 10px;
-    letter-spacing: -1.5px;
-  }
-  .hero-sub { font-size: 15px; margin-bottom: 16px; line-height: 1.45; }
-  .hero-badge { margin-bottom: 10px; font-size: 11px; padding: 4px 12px; }
-  .hero-actions { gap: 10px; }
-  .stats { margin-top: 20px; padding-top: 16px; gap: 24px; }
-  .stat-num { font-size: 24px; }
-  #servicios { padding-top: 60px; padding-bottom: 16px; }
-  .servicios-grid { margin-top: 12px; }
-  .servicio-card { padding: 14px 18px; }
-  .servicio-icon { font-size: 20px; margin-bottom: 6px; }
-  .servicio-card h3 { font-size: 16px; margin-bottom: 4px; }
-  .servicio-card p { font-size: 12.5px; margin-bottom: 8px; line-height: 1.4; }
-  .servicio-card ul { gap: 3px; }
-  .servicio-card li { font-size: 12px; line-height: 1.3; }
-  .servicio-tag { margin-top: 8px; padding: 3px 8px; }
-  #canchas { padding-top: 56px; padding-bottom: 10px; scroll-margin-top: 0; }
-  #canchas .section-title { font-size: clamp(22px, 2.6vw, 28px); margin-bottom: 8px; }
-  .canchas-layout { gap: 20px; }
-  .canchas-legend { margin: 8px 0 10px; }
-  .canchas-list { gap: 4px; margin-bottom: 12px; }
-  .canchas-list li { font-size: 12.5px; }
-  .canchas-video-wrap video { max-height: calc(100dvh - 96px); }
-  #canchas .btn-primary-lg { padding: 10px 20px; font-size: 13px; }
-  .demo-title { font-size: clamp(28px, 4vw, 40px); margin-bottom: 10px; }
-  .demo-sub { font-size: 15px; margin-bottom: 20px; }
-  .demo-badge-big { margin-bottom: 12px; }
-  .demo-features { margin-bottom: 24px; gap: 12px; }
-  .demo-feature { padding: 14px; }
-}
-
 /* ── DEMO ── */
 .demo-section {
   background: linear-gradient(135deg, rgba(184,245,66,0.08) 0%, rgba(184,245,66,0.02) 100%);
@@ -1023,6 +860,260 @@ footer p { margin-top: 6px; }
 .rubro-cta-strip { margin-top: 32px; padding: 20px 24px; background: rgba(184,245,66,.06); border: 1px solid rgba(184,245,66,.15); border-radius: 8px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .rubro-cta-strip p { font-size: 14px; color: var(--gris-texto); }
 .rubro-cta-strip strong { color: var(--blanco); display: block; margin-bottom: 4px; }
+
+/* ── ESCRITORIO CORTO ── */
+/* Compact desktop: after component CSS so it wins */
+@media (min-width: 769px) {
+  section,
+  section.full-width,
+  .demo-section,
+  .caso-exito,
+  .problema,
+  .comparacion,
+  .cta-final,
+  .section-webs {
+    min-height: 100vh;
+    min-height: 100dvh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: clamp(56px, 8vh, 100px);
+    padding-bottom: clamp(24px, 5vh, 100px);
+  }
+  section[id] { scroll-margin-top: 0; }
+  section > .inner,
+  .webs-inner,
+  .cta-final .inner,
+  .demo-section .inner {
+    width: 100%;
+  }
+  .section-title {
+    font-size: clamp(26px, 4.6vh, 52px);
+  }
+  .hero {
+    padding-top: clamp(80px, 12vh, 120px);
+    padding-bottom: clamp(32px, 6vh, 80px);
+  }
+  h1.hero-title {
+    font-size: clamp(40px, 9vh, 88px);
+    margin-bottom: clamp(12px, 2.4vh, 28px);
+  }
+  .hero-sub { margin-bottom: clamp(16px, 3vh, 44px); }
+  .hero-badge { margin-bottom: clamp(12px, 2vh, 28px); }
+  .stats {
+    margin-top: clamp(24px, 5vh, 72px);
+    padding-top: clamp(16px, 3vh, 48px);
+  }
+  #canchas {
+    padding-top: clamp(72px, 10vh, 88px);
+    padding-bottom: clamp(16px, 3vh, 36px);
+  }
+  #canchas .section-title {
+    font-size: clamp(22px, 4.2vh, 40px);
+    margin-bottom: 1vh;
+  }
+  #canchas .section-sub {
+    font-size: clamp(13px, 1.85vh, 16px);
+    margin-bottom: 1vh;
+  }
+  .canchas-layout { margin-top: 0; gap: clamp(16px, 3vh, 36px); }
+  .canchas-legend { margin: 1vh 0 1.4vh; }
+  .canchas-list { gap: 0.55vh; margin-top: 1.4vh; }
+  .canchas-list li { font-size: clamp(12px, 1.65vh, 15px); line-height: 1.35; }
+  .canchas-video-wrap video {
+    max-height: min(68vh, calc(100dvh - 130px));
+    object-fit: contain;
+  }
+}
+
+@media (min-width: 769px) and (max-height: 940px) {
+  section,
+  section.full-width,
+  .demo-section,
+  .caso-exito,
+  .problema,
+  .comparacion,
+  .cta-final,
+  .section-webs {
+    padding-top: 56px;
+    padding-bottom: 24px;
+  }
+  .hero {
+    padding-top: 84px;
+    padding-bottom: 36px;
+  }
+  h1.hero-title {
+    font-size: clamp(40px, 7vh, 64px);
+    margin-bottom: 16px;
+  }
+  .hero-sub { font-size: 16px; margin-bottom: 20px; }
+  .hero-badge { margin-bottom: 14px; }
+  .section-title {
+    font-size: clamp(26px, 3.2vw, 36px);
+    margin-bottom: 12px;
+  }
+  .section-label { margin-bottom: 8px; }
+  .section-sub { font-size: 14px; line-height: 1.5; margin-bottom: 12px; }
+  #servicios { padding-top: 64px; padding-bottom: 20px; }
+  .servicios-grid { margin-top: 20px; }
+  .servicio-card { padding: 20px 22px; }
+  .servicio-icon { font-size: 24px; margin-bottom: 8px; }
+  .servicio-card h3 { font-size: 17px; margin-bottom: 8px; }
+  .servicio-card p { font-size: 13px; margin-bottom: 12px; line-height: 1.45; }
+  .servicio-card ul { gap: 5px; }
+  .servicio-card li { font-size: 12.5px; }
+  .servicio-tag { margin-top: 10px; }
+  #canchas { padding-top: 64px; padding-bottom: 16px; }
+  #canchas .section-title { font-size: clamp(24px, 3vw, 32px); }
+  .canchas-legend { margin: 10px 0 12px; }
+  .canchas-list { gap: 6px; margin-bottom: 16px; }
+  .canchas-list li { font-size: 13px; line-height: 1.35; }
+  .canchas-video-wrap video { max-height: calc(100dvh - 110px); }
+  .btn-primary-lg, .btn-secondary-lg { padding: 12px 24px; font-size: 14px; }
+  .rubros-tabs { margin-bottom: 16px; }
+  .rubro-tab { padding: 10px 8px; }
+  .rubro-panel.active { gap: 24px; }
+  .rubro-prob-grid, .rubro-feat-list { margin-top: 12px; }
+  .rubro-cta-strip { margin-top: 16px; padding: 14px 16px; }
+  .problema-grid, .features-grid, .proceso-grid { margin-top: 20px; }
+  .problema-item, .feature-card, .proceso-step { padding: 20px 18px; }
+  .caso-content { margin-top: 20px; gap: 32px; }
+  .caso-quote { font-size: 20px; margin-bottom: 16px; }
+  .webs-double-grid { display: none; }
+  .webs-triple-grid { margin-bottom: 16px; }
+  .webs-triple-grid > div { padding: 20px 18px; }
+  .webs-cta-block { padding: 20px 22px; }
+  .comp-table-scroll { margin-top: 20px; }
+  .comp-table th, .comp-table td { padding: 12px 14px; }
+  .precio-grid { margin-top: 20px; }
+  .precio-card { padding: 24px 22px; }
+  .faq-grid { margin-top: 16px; gap: 12px; }
+  .faq-item { padding: 14px 16px; }
+  .cta-final h2 { font-size: clamp(28px, 4vw, 44px); margin-bottom: 12px; }
+  .cta-final p { font-size: 16px; margin-bottom: 20px; }
+  .contacto-extra { margin-top: 24px; padding-top: 20px; }
+}
+
+@media (min-width: 769px) and (max-height: 800px) {
+  section,
+  section.full-width,
+  .demo-section,
+  .caso-exito,
+  .problema,
+  .comparacion,
+  .cta-final,
+  .section-webs {
+    padding-top: 56px;
+    padding-bottom: 12px;
+  }
+  .hero {
+    padding-top: 72px;
+    padding-bottom: 20px;
+  }
+  h1.hero-title {
+    font-size: clamp(32px, 6.2vh, 52px);
+    margin-bottom: 10px;
+    letter-spacing: -1.5px;
+  }
+  .hero-sub { font-size: 15px; margin-bottom: 16px; line-height: 1.45; }
+  .hero-badge { margin-bottom: 10px; font-size: 11px; padding: 4px 12px; }
+  .hero-actions { gap: 10px; }
+  .stats { margin-top: 20px; padding-top: 16px; gap: 24px; }
+  .stat-num { font-size: 24px; }
+  #servicios { padding-top: 56px; padding-bottom: 12px; }
+  .servicios-grid { margin-top: 12px; }
+  .servicio-card { padding: 14px 18px; }
+  .servicio-icon { font-size: 20px; margin-bottom: 6px; }
+  .servicio-card h3 { font-size: 16px; margin-bottom: 4px; }
+  .servicio-card p { font-size: 12.5px; margin-bottom: 8px; line-height: 1.4; }
+  .servicio-card ul { gap: 3px; }
+  .servicio-card li { font-size: 12px; line-height: 1.3; }
+  .servicio-tag { margin-top: 8px; padding: 3px 8px; }
+  #canchas { padding-top: 56px; padding-bottom: 10px; }
+  #canchas .section-title { font-size: clamp(22px, 2.6vw, 28px); margin-bottom: 8px; }
+  .canchas-layout { gap: 20px; }
+  .canchas-legend { margin: 8px 0 10px; }
+  .canchas-list { gap: 4px; margin-bottom: 12px; }
+  .canchas-list li { font-size: 12.5px; }
+  .canchas-video-wrap video { max-height: calc(100dvh - 96px); }
+  #canchas .btn-primary-lg { padding: 10px 20px; font-size: 13px; }
+  .demo-title { font-size: clamp(28px, 4vw, 40px); margin-bottom: 10px; }
+  .demo-sub { font-size: 15px; margin-bottom: 16px; }
+  .demo-badge-big { margin-bottom: 10px; padding: 6px 14px; }
+  .demo-features { margin-bottom: 16px; gap: 10px; }
+  .demo-feature { padding: 12px; }
+  .demo-download-btn { font-size: 15px; padding: 12px 28px; }
+  .demo-small { margin-top: 10px; }
+  #rubros .rubro-panel h3 { font-size: 16px !important; }
+  #rubros .rubro-panel > div > p { font-size: 13px !important; }
+  .rubros-tabs { margin-bottom: 10px; }
+  .rubro-tab { padding: 6px 6px; font-size: 11px; gap: 2px; }
+  .rubro-tab .tab-ico { font-size: 16px; }
+  .rubro-panel.active { gap: 16px; }
+  .rubro-prob-grid { margin-top: 8px; }
+  .rubro-prob-item { padding: 8px 10px; gap: 8px; }
+  .rubro-prob-item h4 { font-size: 12px; }
+  .rubro-prob-item p { font-size: 11px; line-height: 1.35; }
+  .rubro-feat-list { gap: 6px; margin-top: 8px; }
+  .rubro-feat-item { padding: 8px 10px; gap: 10px; }
+  .rubro-feat-item h4 { font-size: 12px; }
+  .rubro-feat-item p { font-size: 11px; line-height: 1.35; }
+  .rubro-cta-strip { margin-top: 8px; padding: 8px 12px; }
+  .rubro-cta-strip p { font-size: 12px; }
+  .problema-grid { margin-top: 12px; }
+  .problema-item { padding: 14px 16px; gap: 12px; }
+  .problema-item h3 { font-size: 14px; }
+  .problema-item p { font-size: 12px; line-height: 1.4; }
+  .features-grid { margin-top: 12px; }
+  .feature-card { padding: 14px 16px; }
+  .feature-num { margin-bottom: 6px; }
+  .feature-card h3 { font-size: 14px; margin-bottom: 4px; }
+  .feature-card p { font-size: 12px; line-height: 1.4; }
+  .proceso-grid { margin-top: 12px; }
+  .proceso-step { padding: 14px 16px; }
+  .proceso-num { margin-bottom: 8px; }
+  .proceso-step h3 { font-size: 14px; }
+  .proceso-step p { font-size: 12px; line-height: 1.4; }
+  .caso-content { margin-top: 10px; gap: 24px; }
+  .caso-badge { margin-bottom: 8px; }
+  .caso-quote { font-size: 16px; margin-bottom: 10px; line-height: 1.3; }
+  .caso-autor { margin-bottom: 10px; gap: 10px; }
+  .caso-autor-icono { width: 36px; height: 36px; font-size: 18px; }
+  .caso-metricas { margin-bottom: 10px; padding: 10px; gap: 8px; }
+  .caso-metrica-num { font-size: 18px; }
+  .caso-links { gap: 8px; }
+  .caso-link { padding: 6px 12px; font-size: 12px; }
+  .caso-card-visual { padding: 14px; }
+  .caso-card-visual-header { margin-bottom: 8px; padding-bottom: 8px; }
+  .caso-card-item { padding: 6px 0; }
+  .caso-card-visual-nombre { font-size: 15px; }
+  .webs-double-grid { display: none; }
+  .webs-triple-grid { margin-bottom: 8px; }
+  .webs-triple-grid > div { padding: 10px 14px; }
+  .webs-cta-block { padding: 10px 16px; }
+  #webs { padding-bottom: 8px; }
+  .comp-table-scroll { margin-top: 12px; }
+  .comp-table { font-size: 13px; }
+  .comp-table th, .comp-table td { padding: 8px 12px; }
+  .precio-grid { margin-top: 12px; gap: 14px; }
+  .precio-card { padding: 16px 18px; }
+  .precio-tipo { margin-bottom: 6px; }
+  .precio-valor { font-size: 22px; }
+  .precio-desc { margin-bottom: 10px; font-size: 12px; }
+  .precio-lista { gap: 4px; margin-bottom: 12px; }
+  .precio-lista li { font-size: 12.5px; }
+  .precio-cta-btn { padding: 10px; font-size: 13px; }
+  #precios > .section-sub { margin-top: 10px !important; }
+  .faq-grid { margin-top: 10px; gap: 8px; grid-template-columns: 1fr 1fr; }
+  .faq-item { padding: 8px 12px; }
+  .faq-question { font-size: 12.5px; margin-bottom: 2px; }
+  .faq-answer { font-size: 11.5px; line-height: 1.35; }
+  .cta-final h2 { font-size: clamp(26px, 4vw, 36px); margin-bottom: 8px; }
+  .cta-final p { font-size: 14px; margin-bottom: 14px; }
+  .cta-final-btns { gap: 10px; }
+  .contacto-extra { margin-top: 16px; padding-top: 12px; gap: 12px; }
+}
 
 /* ── ANIMACIONES ── */
 .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s, transform 0.6s; }

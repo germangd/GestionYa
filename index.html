@@ -4,20 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>GestiónYa — Soluciones de Software para tu Negocio</title>
-<meta name="description" content="Software de ventas, páginas web profesionales y agenda de turnos online. DEMO gratis por 7 días. Sin tarjeta de crédito.">
+<meta name="description" content="Software de ventas, alquiler de canchas, páginas web y agenda de turnos. DEMO gratis por 7 días. Sin tarjeta de crédito.">
 <meta name="theme-color" content="#0a0a0a">
 <meta property="og:title" content="GestiónYa — Soluciones de Software para tu Negocio">
-<meta property="og:description" content="Software de ventas, páginas web profesionales y agenda de turnos online. DEMO gratis por 7 días. Sin tarjeta de crédito.">
+<meta property="og:description" content="Software de ventas, alquiler de canchas, páginas web y agenda de turnos. DEMO gratis por 7 días. Sin tarjeta de crédito.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_AR">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GestiónYa — Soluciones de Software para tu Negocio">
-<meta name="twitter:description" content="Software de ventas, páginas web y agenda de turnos. DEMO 7 días gratis, sin tarjeta.">
+<meta name="twitter:description" content="Software de ventas, alquiler de canchas, páginas web y agenda de turnos. DEMO 7 días gratis, sin tarjeta.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"GestiónYa","description":"Software de ventas, páginas web profesionales y agenda de turnos online para comercios y profesionales en Argentina.","areaServed":{"@type":"Country","name":"Argentina"},"email":"germangd23@gmail.com","contactPoint":[{"@type":"ContactPoint","contactType":"sales","availableLanguage":["Spanish"],"telephone":"+54-9-221-201-0063"}]}
+{"@context":"https://schema.org","@type":"Organization","name":"GestiónYa","description":"Software de ventas, alquiler de canchas, páginas web profesionales y agenda de turnos online para comercios, clubes y profesionales en Argentina.","areaServed":{"@type":"Country","name":"Argentina"},"email":"germangd23@gmail.com","contactPoint":[{"@type":"ContactPoint","contactType":"sales","availableLanguage":["Spanish"],"telephone":"+54-9-221-201-0063"}]}
 </script>
 <style>
 :root {
@@ -262,6 +262,7 @@ h1.hero-title {
 
 /* ── SECCIONES GENERALES ── */
 section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
+section[id] { scroll-margin-top: 88px; }
 section.full-width { max-width: none; padding: 100px 40px; }
 .section-label {
   font-size: 11px; font-weight: 600; letter-spacing: 2px;
@@ -277,11 +278,11 @@ section.full-width { max-width: none; padding: 100px 40px; }
   max-width: 520px; line-height: 1.7; margin-bottom: 20px;
 }
 
-/* ── SERVICIOS (3 cards) ── */
+/* ── SERVICIOS ── */
 #servicios { background: var(--gris); max-width: none; }
 #servicios .inner { max-width: 1200px; margin: 0 auto; }
 .servicios-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
+  display: grid; grid-template-columns: repeat(2, 1fr);
   gap: 1px; margin-top: 60px;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.06);
@@ -333,6 +334,69 @@ section.full-width { max-width: none; padding: 100px 40px; }
 .servicio-tag:hover {
   background: rgba(184,245,66,0.1);
   border-color: rgba(184,245,66,0.6);
+}
+
+/* ── CANCHAS ── */
+#canchas { background: var(--negro); max-width: none; }
+#canchas .inner { max-width: 1200px; margin: 0 auto; }
+.canchas-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 48px;
+  align-items: center;
+  margin-top: 48px;
+}
+.canchas-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin: 22px 0 28px;
+}
+.canchas-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--gris-texto);
+}
+.canchas-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.canchas-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.canchas-list li {
+  font-size: 15px;
+  padding-left: 22px;
+  position: relative;
+  line-height: 1.45;
+}
+.canchas-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--verde);
+  font-weight: 700;
+}
+.canchas-video-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: #0c1210;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+}
+.canchas-video-wrap video {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: top;
 }
 
 /* ── DEMO ── */
@@ -771,7 +835,7 @@ footer p { margin-top: 6px; }
 .rubro-tab {
   flex: 1; background: none; border: none; border-right: 1px solid rgba(255,255,255,.08);
   cursor: pointer; padding: 16px 12px; text-align: center;
-  font-family: 'Syne', sans-serif; font-weight: 600; font-size: 13px;
+  font-family: 'Syne', sans-serif; font-weight: 600; font-size: 12px;
   color: var(--gris-texto); transition: color .15s, background .15s;
   display: flex; flex-direction: column; align-items: center; gap: 6px;
 }
@@ -861,7 +925,7 @@ footer p { margin-top: 6px; }
   .hero-sub { font-size: 17px; }
   section { padding: 60px max(16px, env(safe-area-inset-left)) 60px max(16px, env(safe-area-inset-right)); }
   .demo-section { padding: 60px max(16px, env(safe-area-inset-left)) 60px max(16px, env(safe-area-inset-right)); }
-  section.full-width, .caso-exito, .problema, #servicios, .comparacion, .cta-final, .demo-section {
+  section.full-width, .caso-exito, .problema, #servicios, #canchas, .comparacion, .cta-final, .demo-section {
     padding: 60px max(16px, env(safe-area-inset-left)) 60px max(16px, env(safe-area-inset-right));
   }
   .section-webs { padding-top: 60px; padding-bottom: 60px; }
@@ -890,6 +954,7 @@ footer p { margin-top: 6px; }
   .btn-primary-lg, .btn-secondary-lg { touch-action: manipulation; min-height: 48px; }
   .stats { gap: 28px; margin-top: 48px; padding-top: 32px; }
   .servicios-grid { grid-template-columns: 1fr; }
+  .canchas-layout { grid-template-columns: 1fr; gap: 32px; }
   .problema-grid { grid-template-columns: 1fr; }
   .features-grid { grid-template-columns: 1fr; }
   .proceso-grid { grid-template-columns: 1fr 1fr; }
@@ -1063,6 +1128,7 @@ footer p { margin-top: 6px; }
     <div class="nav-menu-panel" id="nav-menu-panel">
       <div class="nav-links">
         <a href="#servicios">Servicios</a>
+        <a href="#canchas">Canchas</a>
         <a href="#rubros">Por rubro</a>
         <a href="#demo">DEMO gratis</a>
         <a href="#webs">Páginas web</a>
@@ -1092,7 +1158,7 @@ footer p { margin-top: 6px; }
       <span class="thin">y ordena tu negocio.</span>
     </h1>
     <p class="hero-sub">
-      Sistemas de ventas, páginas web y agenda de turnos online. Soluciones digitales a medida para comercios y profesionales, con foco en resultados reales.
+      Sistemas de ventas, alquiler de canchas, páginas web y agenda de turnos online. Soluciones digitales a medida para comercios, clubes y profesionales, con foco en resultados reales.
     </p>
     <div class="hero-actions">
       <a href="#demo" class="btn-primary-lg">⬇️ Descargar DEMO gratis</a>
@@ -1160,6 +1226,54 @@ footer p { margin-top: 6px; }
         </ul>
         <a class="servicio-tag" href="https://wa.me/5492212010063?text=Hola!%20Quiero%20info%20sobre%20la%20agenda%20de%20turnos%20online" target="_blank" rel="noopener">CONSULTÁ →</a>
       </div>
+      <div class="servicio-card">
+        <span class="servicio-icon">🏟️</span>
+        <h3>Alquiler de canchas</h3>
+        <p>Software de escritorio para clubes: turnos, cobros, canchas superpuestas y cuotas de la escuelita. Los datos quedan en tu PC.</p>
+        <ul>
+          <li>Mapa verde, azul y rojo por turno</li>
+          <li>Cobro en efectivo, transferencia o tarjeta</li>
+          <li>Fútbol 5 y 8 sin superponerse</li>
+          <li>Escuelita, cuotas y comisiones</li>
+        </ul>
+        <a class="servicio-tag" href="#canchas">VER CÓMO FUNCIONA →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CANCHAS -->
+<section id="canchas" class="full-width">
+  <div class="inner">
+    <div class="canchas-layout fade-up">
+      <div>
+        <div class="section-label">Club y predio</div>
+        <h2 class="section-title">Alquiler de canchas en la computadora del club</h2>
+        <p class="section-sub">Secretaría, turnos y cuentas en una sola pantalla. Verde libre, azul alquilada, rojo bloqueada. Si alquilás el fútbol 5, el 8 queda bloqueado solo.</p>
+        <div class="canchas-legend">
+          <span class="canchas-chip"><span class="canchas-dot" style="background:#1f8a4c"></span> Libre</span>
+          <span class="canchas-chip"><span class="canchas-dot" style="background:#1d4ed8"></span> Alquilada</span>
+          <span class="canchas-chip"><span class="canchas-dot" style="background:#b42318"></span> Bloqueada</span>
+        </div>
+        <ul class="canchas-list">
+          <li>Elegís la hora, el cliente y la pelota. Cobrás en efectivo, transferencia o tarjeta.</li>
+          <li>Canchas superpuestas: no se pisan los turnos del fútbol 5 y el 8.</li>
+          <li>Escuelita con ciclo lectivo, vencimiento de cuota y cobro en un clic.</li>
+          <li>Resumen del día: alquileres, cuotas, deudas y comisiones.</li>
+          <li>Los datos quedan en la PC. Sin internet para operar.</li>
+        </ul>
+        <a class="btn-primary-lg" href="https://wa.me/5492212010063?text=Hola!%20Quiero%20info%20sobre%20el%20software%20de%20alquiler%20de%20canchas" target="_blank" rel="noopener">💬 Pedir una demo por WhatsApp</a>
+      </div>
+      <div class="canchas-video-wrap">
+        <video
+          controls
+          playsinline
+          preload="metadata"
+          poster="canchas-poster.jpg"
+          title="Demo del software de alquiler de canchas">
+          <source src="canchas-demo.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
   </div>
 </section>
@@ -1185,6 +1299,10 @@ footer p { margin-top: 6px; }
       <button type="button" class="rubro-tab" onclick="setRubroTab('ropa', this)">
         <span class="tab-ico">👕</span>
         <span>Ropa e indumentaria</span>
+      </button>
+      <button type="button" class="rubro-tab" onclick="setRubroTab('canchas', this)">
+        <span class="tab-ico">🏟️</span>
+        <span>Clubes y canchas</span>
       </button>
     </div>
 
@@ -1274,6 +1392,36 @@ footer p { margin-top: 6px; }
         <div class="rubro-cta-strip">
           <div><strong>¿Tenés un local de ropa?</strong><p>Probá la DEMO 7 días gratis, sin tarjeta.</p></div>
           <a href="https://wa.me/5492212010063?text=Hola!%20Tengo%20un%20local%20de%20ropa%20y%20me%20interesa%20GestionYa" target="_blank" rel="noopener" class="btn-primary-lg" style="font-size:13px;padding:12px 20px;">💬 Consultar →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CANCHAS RUBRO -->
+    <div class="rubro-panel" id="rp-canchas">
+      <div>
+        <div class="section-label">Problemas típicos</div>
+        <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:22px;line-height:1.2;margin-bottom:4px;">Lo que pasa en la secretaría del club</h3>
+        <p style="font-size:14px;color:var(--gris-texto);">Cuando los turnos van en un cuaderno, se pisan las canchas y las cuotas se pierden.</p>
+        <div class="rubro-prob-grid">
+          <div class="rubro-prob-item"><span class="rubro-prob-ico">📒</span><div><h4>Turnos en papel o WhatsApp</h4><p>Nadie sabe si las 18 está libre hasta que llega la gente. Se anota dos veces el mismo horario.</p></div></div>
+          <div class="rubro-prob-item"><span class="rubro-prob-ico">⚽</span><div><h4>El 5 y el 8 se pisan</h4><p>Alquilás el fútbol 5 y alguien usa el 8 al mismo tiempo. El predio se mezcla y hay pelea.</p></div></div>
+          <div class="rubro-prob-item"><span class="rubro-prob-ico">💸</span><div><h4>No cierra lo cobrado</h4><p>Efectivo, transferencia y tarjeta se mezclan. Las comisiones de la directiva no están claras.</p></div></div>
+          <div class="rubro-prob-item"><span class="rubro-prob-ico">👦</span><div><h4>Cuotas de la escuelita a mano</h4><p>No sabés quién está al día. El cobro se atrasa y el profesor no tiene el porcentaje ordenado.</p></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">Cómo lo resuelve GestiónYa</div>
+        <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:22px;line-height:1.2;margin-bottom:4px;">El predio, en una sola pantalla</h3>
+        <p style="font-size:14px;color:var(--gris-texto);">Verde libre, azul alquilada, rojo bloqueada. Cada hora es un turno.</p>
+        <div class="rubro-feat-list">
+          <div class="rubro-feat-item"><span class="rubro-feat-num">01</span><div><h4>Mapa de canchas por hora</h4><p>Ves el predio completo. Elegís el turno, el cliente y cobrás. Efectivo, transferencia o tarjeta.</p></div></div>
+          <div class="rubro-feat-item"><span class="rubro-feat-num">02</span><div><h4>Canchas que no se superponen</h4><p>Si alquilás el fútbol 5, el 8 queda bloqueado solo. Lo mismo en vóley y hándbol sobre la misma cancha.</p></div></div>
+          <div class="rubro-feat-item"><span class="rubro-feat-num">03</span><div><h4>Escuelita y cuotas</h4><p>Buscás al alumno por nombre, ves si está al día y cobrás la cuota en un clic.</p></div></div>
+          <div class="rubro-feat-item"><span class="rubro-feat-num">04</span><div><h4>Cierre del día en la PC</h4><p>Alquileres, cuotas, deudas y comisiones. Los datos quedan en la computadora del club.</p></div></div>
+        </div>
+        <div class="rubro-cta-strip">
+          <div><strong>¿Tenés un club o alquilás canchas?</strong><p>Pedí una demo por WhatsApp. Lo vemos en tu predio.</p></div>
+          <a href="https://wa.me/5492212010063?text=Hola!%20Tengo%20un%20club%20y%20me%20interesa%20el%20software%20de%20canchas" target="_blank" rel="noopener" class="btn-primary-lg" style="font-size:13px;padding:12px 20px;">💬 Consultar →</a>
         </div>
       </div>
     </div>
@@ -1755,6 +1903,7 @@ footer p { margin-top: 6px; }
       </a>
     </div>
   </div>
+  <p class="section-sub fade-up" style="margin:36px auto 0;text-align:center;max-width:640px">El software de alquiler de canchas se cotiza aparte, según el predio. <a href="https://wa.me/5492212010063?text=Hola!%20Quiero%20info%20sobre%20el%20software%20de%20alquiler%20de%20canchas" target="_blank" rel="noopener" style="color:var(--verde)">Consultá por WhatsApp →</a></p>
 </section>
 
 <!-- FAQ -->
@@ -1789,6 +1938,10 @@ footer p { margin-top: 6px; }
       <div class="faq-answer">100%. Los datos quedan solo en tu PC. No hay servidor central. Nadie más ve tus ventas. Ni nosotros.</div>
     </div>
     <div class="faq-item">
+      <div class="faq-question">¿Tienen software para alquiler de canchas?</div>
+      <div class="faq-answer">Sí. Es un programa de escritorio para la secretaría del club: mapa de canchas por turno, cobros, canchas superpuestas (fútbol 5 y 8) y cuotas de la escuelita. Los datos quedan en tu PC. Pedí una demo por WhatsApp.</div>
+    </div>
+    <div class="faq-item">
       <div class="faq-question">¿Cuánto tarda en estar lista una página web?</div>
       <div class="faq-answer">Depende del tipo de sitio. Una landing page tarda entre 5 y 10 días. Un sitio con agenda de turnos o más secciones puede llevar 2 a 3 semanas. En la propuesta inicial te damos un plazo exacto.</div>
     </div>
@@ -1808,7 +1961,7 @@ footer p { margin-top: 6px; }
   <div class="cta-bg"></div>
   <div class="inner">
     <h2>¿Arrancamos?</h2>
-    <p>Probá la DEMO gratis 7 días. Si te gusta, elegimos juntos el plan que mejor se adapte a tu negocio. Propuesta a medida en menos de 24 horas.</p>
+    <p>Probá la DEMO de ventas 7 días, o pedí una demo del software de canchas por WhatsApp. Propuesta a medida en menos de 24 horas.</p>
     <div class="cta-final-btns">
       <a href="#demo" class="btn-primary-lg">
         ⬇️ Descargar DEMO gratis →
@@ -1828,7 +1981,7 @@ footer p { margin-top: 6px; }
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">GestiónYa</div>
-  <p>Soluciones digitales para ventas y servicios · Hecho en Argentina 🇦🇷</p>
+  <p>Soluciones digitales para ventas, clubes y servicios · Hecho en Argentina 🇦🇷</p>
   <p style="margin-top: 8px;">germangd23@gmail.com · +54 9 221 201-0063</p>
 </footer>
 
@@ -1867,6 +2020,7 @@ footer p { margin-top: 6px; }
               <option value="Kiosco o almacén">🏪 Kiosco o almacén</option>
               <option value="Peluquería o estética">💇 Peluquería o estética</option>
               <option value="Local de ropa">👕 Local de ropa</option>
+              <option value="Club o alquiler de canchas">🏟️ Club o alquiler de canchas</option>
               <option value="Farmacia o dietética">💊 Farmacia o dietética</option>
               <option value="Ferretería">🔧 Ferretería</option>
               <option value="Restaurante o bar">🍔 Restaurante o bar</option>

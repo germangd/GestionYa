@@ -101,7 +101,12 @@ nav::before {
   font-weight: 800; font-size: 20px;
   color: var(--blanco);
   display: flex; align-items: center; gap: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 102;
 }
+.nav-logo:hover { color: var(--blanco); }
 .nav-logo-dot {
   width: 10px; height: 10px; border-radius: 50%;
   background: var(--verde);
@@ -1407,10 +1412,10 @@ footer p { margin-top: 6px; }
 <!-- NAV -->
 <header>
 <nav aria-label="Principal">
-  <div class="nav-logo">
+  <a href="#inicio" class="nav-logo" id="nav-logo" aria-label="GestiónYa, ir al inicio">
     <span class="nav-logo-dot"></span>
     GestiónYa
-  </div>
+  </a>
   <div class="nav-end">
     <button type="button" class="nav-burger" id="nav-menu-btn" aria-expanded="false" aria-controls="nav-menu-panel" aria-label="Abrir menú">
       <span></span><span></span><span></span>
@@ -1434,7 +1439,7 @@ footer p { margin-top: 6px; }
 <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
 <main id="main-content">
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="inicio">
   <div class="hero-bg"></div>
   <div class="hero-grid-bg"></div>
   <div class="hero-content fade-up">
@@ -2461,6 +2466,16 @@ document.addEventListener('DOMContentLoaded', function () {
     navBackdrop.addEventListener('click', () => navClose());
     navPanel.querySelectorAll('a').forEach((a) => {
       a.addEventListener('click', () => navClose());
+    });
+  }
+
+  const navLogo = document.getElementById('nav-logo');
+  if (navLogo) {
+    navLogo.addEventListener('click', function (e) {
+      e.preventDefault();
+      navClose();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      history.replaceState(null, '', window.location.pathname + window.location.search);
     });
   }
 
